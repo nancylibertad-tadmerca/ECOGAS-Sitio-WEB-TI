@@ -154,7 +154,7 @@ const Index = () => {
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Beneficios ECOGAS</h2>
+            <h2 className="text-3xl font-bold mb-4">Beneficios del Gas Natural</h2>
             <p className="opacity-90">Para hogares, comercios e industrias</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -248,7 +248,7 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-16 bg-accent text-accent-foreground">
         <div className="container text-center">
-          <h2 className="text-3xl font-bold mb-4">¿Necesitas ayuda?</h2>
+          <h2 className="text-3xl font-bold mb-4 text-accent">¿Necesitas ayuda?</h2>
           <p className="mb-8 max-w-2xl mx-auto opacity-90">
             Nuestro equipo está listo para atenderte. Contáctanos por teléfono o WhatsApp.
           </p>
