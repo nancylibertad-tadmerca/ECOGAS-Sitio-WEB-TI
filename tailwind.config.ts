@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Montserrat', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -56,6 +59,11 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        ecogas: {
+          blue: "hsl(var(--ecogas-blue))",
+          cyan: "hsl(var(--ecogas-cyan))",
+          green: "hsl(var(--ecogas-green))",
         },
       },
       borderRadius: {
