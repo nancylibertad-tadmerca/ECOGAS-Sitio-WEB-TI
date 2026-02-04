@@ -3,8 +3,47 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// Pages
 import Index from "./pages/Index";
+import Contacto from "./pages/Contacto";
 import NotFound from "./pages/NotFound";
+
+// Empresa
+import QuienesSomos from "./pages/empresa/QuienesSomos";
+import FilosofiaValores from "./pages/empresa/FilosofiaValores";
+
+// Sustentabilidad
+import EmpresaResponsable from "./pages/sustentabilidad/EmpresaResponsable";
+
+// Gas Natural
+import QueEsGasNatural from "./pages/gas-natural/QueEs";
+
+// Servicios
+import ServiciosHogar from "./pages/servicios/Hogar";
+import ServiciosComercios from "./pages/servicios/Comercios";
+import ServiciosIndustria from "./pages/servicios/Industria";
+
+// Clientes
+import FormasDePago from "./pages/clientes/FormasDePago";
+import PagoEnLinea from "./pages/clientes/PagoEnLinea";
+import Recibo from "./pages/clientes/Recibo";
+
+// Blog
+import TipsAhorro from "./pages/blog/TipsAhorro";
+
+// Contratar
+import ComoContratar from "./pages/contratar/ComoContratar";
+
+// Cobertura
+import CoberturaChihuahua from "./pages/cobertura/Chihuahua";
+import CoberturaTorreon from "./pages/cobertura/Torreon";
+import CoberturaDurango from "./pages/cobertura/Durango";
+import CoberturaMexicali from "./pages/cobertura/Mexicali";
+
+// Legal
+import AvisoPrivacidad from "./pages/legal/AvisoPrivacidad";
+import TerminosCondiciones from "./pages/legal/TerminosCondiciones";
 
 const queryClient = new QueryClient();
 
@@ -15,8 +54,49 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          {/* Home */}
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          
+          {/* Contacto */}
+          <Route path="/contacto/" element={<Contacto />} />
+          
+          {/* Empresa */}
+          <Route path="/empresa/quienes-somos/" element={<QuienesSomos />} />
+          <Route path="/empresa/filosofia-y-valores/" element={<FilosofiaValores />} />
+          
+          {/* Sustentabilidad */}
+          <Route path="/sustentabilidad/empresa-responsable/" element={<EmpresaResponsable />} />
+          
+          {/* Gas Natural */}
+          <Route path="/gas-natural/que-es/" element={<QueEsGasNatural />} />
+          
+          {/* Servicios */}
+          <Route path="/servicios/hogar/" element={<ServiciosHogar />} />
+          <Route path="/servicios/comercios/" element={<ServiciosComercios />} />
+          <Route path="/servicios/industria/" element={<ServiciosIndustria />} />
+          
+          {/* Clientes */}
+          <Route path="/clientes/formas-de-pago/" element={<FormasDePago />} />
+          <Route path="/clientes/pago-en-linea/" element={<PagoEnLinea />} />
+          <Route path="/clientes/recibo/" element={<Recibo />} />
+          
+          {/* Blog */}
+          <Route path="/blog/ahorro/tips-ahorrar-gas-natural/" element={<TipsAhorro />} />
+          
+          {/* Contratar */}
+          <Route path="/contratar/como-contratar/" element={<ComoContratar />} />
+          
+          {/* Cobertura */}
+          <Route path="/cobertura/chihuahua/" element={<CoberturaChihuahua />} />
+          <Route path="/cobertura/torreon-laguna/" element={<CoberturaTorreon />} />
+          <Route path="/cobertura/victoria-durango/" element={<CoberturaDurango />} />
+          <Route path="/cobertura/mexicali/" element={<CoberturaMexicali />} />
+          
+          {/* Legal */}
+          <Route path="/aviso-de-privacidad/" element={<AvisoPrivacidad />} />
+          <Route path="/terminos-y-condiciones/" element={<TerminosCondiciones />} />
+          
+          {/* 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
