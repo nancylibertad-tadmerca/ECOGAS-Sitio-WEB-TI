@@ -78,7 +78,7 @@ export const NAV_LINKS = [
     ],
   },
   { label: "Quiero Contratar", href: "/contratar/como-contratar/" },
-  { label: "Gas Natural", href: "/gas-natural/que-es/" },
+  { label: "Mitos GN", href: "/gas-natural/que-es/" },
   { label: "Cobertura", href: "/cobertura/chihuahua/" },
   { label: "Contacto", href: "/contacto/" },
 ] as const;
