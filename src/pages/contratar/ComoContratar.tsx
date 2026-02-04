@@ -5,60 +5,54 @@ import Layout from "@/components/layout/Layout";
 import PageBreadcrumb from "@/components/shared/PageBreadcrumb";
 import HubSpotFormPlaceholder from "@/components/shared/HubSpotFormPlaceholder";
 import { SITE_CONFIG } from "@/lib/constants";
-
 const ComoContratar = () => {
-  const pasos = [
-    {
-      numero: 1,
-      icon: Search,
-      titulo: "Verifica cobertura",
-      descripcion: "Confirma que tu domicilio está dentro de nuestra zona de cobertura. Puedes verificarlo en línea o llamarnos."
-    },
-    {
-      numero: 2,
-      icon: FileText,
-      titulo: "Solicita tu contrato",
-      descripcion: "Completa el formulario de solicitud con tus datos. Un asesor te contactará para programar una visita."
-    },
-    {
-      numero: 3,
-      icon: Wrench,
-      titulo: "Instalación",
-      descripcion: "Nuestro equipo técnico realizará la instalación de la acometida y el medidor en tu propiedad."
-    },
-    {
-      numero: 4,
-      icon: CheckCircle,
-      titulo: "Activación",
-      descripcion: "Una vez completada la instalación, activamos tu servicio y puedes comenzar a disfrutar del gas natural."
-    },
-  ];
-
-  return (
-    <Layout>
+  const pasos = [{
+    numero: 1,
+    icon: Search,
+    titulo: "Verifica cobertura",
+    descripcion: "Confirma que tu domicilio está dentro de nuestra zona de cobertura. Puedes verificarlo en línea o llamarnos."
+  }, {
+    numero: 2,
+    icon: FileText,
+    titulo: "Solicita tu contrato",
+    descripcion: "Completa el formulario de solicitud con tus datos. Un asesor te contactará para programar una visita."
+  }, {
+    numero: 3,
+    icon: Wrench,
+    titulo: "Instalación",
+    descripcion: "Nuestro equipo técnico realizará la instalación de la acometida y el medidor en tu propiedad."
+  }, {
+    numero: 4,
+    icon: CheckCircle,
+    titulo: "Activación",
+    descripcion: "Una vez completada la instalación, activamos tu servicio y puedes comenzar a disfrutar del gas natural."
+  }];
+  return <Layout>
       <title>Cómo Contratar Gas Natural | ECOGAS - Guía de Contratación</title>
       <meta name="description" content="Conoce los pasos para contratar gas natural con ECOGAS. Verifica cobertura, solicita tu contrato y disfruta del servicio en tu hogar o negocio." />
       
       {/* Schema HowTo */}
       <script type="application/ld+json">
         {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "HowTo",
-          "name": "Cómo contratar gas natural con ECOGAS",
-          "description": "Guía paso a paso para contratar el servicio de gas natural.",
-          "step": pasos.map((paso) => ({
-            "@type": "HowToStep",
-            "name": paso.titulo,
-            "text": paso.descripcion
-          }))
-        })}
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Cómo contratar gas natural con ECOGAS",
+        "description": "Guía paso a paso para contratar el servicio de gas natural.",
+        "step": pasos.map(paso => ({
+          "@type": "HowToStep",
+          "name": paso.titulo,
+          "text": paso.descripcion
+        }))
+      })}
       </script>
       
       <div className="container py-8 md:py-12">
-        <PageBreadcrumb items={[
-          { label: "Contratar", href: "/contratar/como-contratar/" },
-          { label: "Cómo Contratar" }
-        ]} />
+        <PageBreadcrumb items={[{
+        label: "Contratar",
+        href: "/contratar/como-contratar/"
+      }, {
+        label: "Cómo Contratar"
+      }]} />
         
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
@@ -72,8 +66,7 @@ const ComoContratar = () => {
 
           {/* Steps */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            {pasos.map((paso) => (
-              <div key={paso.numero} className="relative">
+            {pasos.map(paso => <div key={paso.numero} className="relative">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg shrink-0">
                     {paso.numero}
@@ -86,18 +79,14 @@ const ComoContratar = () => {
                     <p className="text-muted-foreground">{paso.descripcion}</p>
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
 
           {/* Form */}
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-2xl font-bold mb-6">Solicita tu Contrato</h2>
-              <HubSpotFormPlaceholder 
-                formType="quieroContratar" 
-                title="Formulario de Contratación"
-              />
+              <h2 className="text-2xl font-bold mb-6">Solicita una cita sin comprommiso</h2>
+              <HubSpotFormPlaceholder formType="quieroContratar" title="Formulario de Contratación" />
             </div>
 
             <div>
@@ -127,8 +116,6 @@ const ComoContratar = () => {
           </div>
         </div>
       </div>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default ComoContratar;
