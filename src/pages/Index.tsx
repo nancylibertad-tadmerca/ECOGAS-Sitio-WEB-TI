@@ -5,10 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Layout from "@/components/layout/Layout";
 import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
 import { SITE_CONFIG } from "@/lib/constants";
-
 const Index = () => {
-  return (
-    <Layout>
+  return <Layout>
       {/* SEO */}
       <title>ECOGAS | Gas Natural para tu Hogar, Comercio e Industria en México</title>
       <meta name="description" content="ECOGAS distribuye gas natural seguro, eficiente y confiable en Chihuahua, Torreón, Durango y Mexicali. Contrata hoy y disfruta los beneficios del gas natural." />
@@ -40,11 +38,7 @@ const Index = () => {
               </div>
             </div>
             <div className="relative">
-              <ImagePlaceholder 
-                text="Hero image - familia usando gas natural" 
-                aspectRatio="video"
-                className="shadow-2xl"
-              />
+              <ImagePlaceholder text="Hero image - familia usando gas natural" aspectRatio="video" className="shadow-2xl" />
             </div>
           </div>
         </div>
@@ -122,10 +116,7 @@ const Index = () => {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <ImagePlaceholder 
-                text="Imagen ilustrativa gas natural" 
-                aspectRatio="video"
-              />
+              <ImagePlaceholder text="Imagen ilustrativa gas natural" aspectRatio="video" />
             </div>
             <div className="space-y-6">
               <h2 className="text-3xl font-bold">¿Qué es el gas natural?</h2>
@@ -163,7 +154,7 @@ const Index = () => {
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Beneficios del Gas Natural</h2>
+            <h2 className="text-3xl font-bold mb-4">Beneficios ECOGAS</h2>
             <p className="opacity-90">Para hogares, comercios e industrias</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -274,8 +265,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Index;
