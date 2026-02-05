@@ -118,13 +118,13 @@ const Hogar = () => {
                   {SITE_CONFIG.phone}
                 </a>
               </Button>
-              <Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button asChild variant="secondary" className="bg-white text-primary hover:bg-white/90">
                 <Link to="/contratar/como-contratar/">
                   Cómo Contratar
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button asChild variant="secondary" className="bg-white text-primary hover:bg-white/90">
                 <Link to="/contacto/">Contacto</Link>
               </Button>
             </div>
