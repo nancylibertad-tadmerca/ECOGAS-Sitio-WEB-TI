@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 import { SITE_CONFIG, NAV_LINKS } from "@/lib/constants";
 import logoWhite from "@/assets/logo-ecogas-white.png";
 
@@ -81,24 +81,6 @@ const Footer = () => {
               <li>
                 <Link to="/blog/ahorro/tips-ahorrar-gas-natural/" className="hover:opacity-80 transition-opacity">Tips de Ahorro</Link>
               </li>
-            </ul>
-          </div>
-
-          {/* Coverage Cities */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Cobertura</h3>
-            <ul className="space-y-2 text-sm">
-              {SITE_CONFIG.cities.map((city) => (
-                <li key={city.slug}>
-                  <Link 
-                    to={`/cobertura/${city.slug}/`} 
-                    className="flex items-center gap-2 hover:opacity-80 transition-opacity"
-                  >
-                    <MapPin className="h-3 w-3" />
-                    {city.name}
-                  </Link>
-                </li>
-              ))}
             </ul>
           </div>
         </div>

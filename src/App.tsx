@@ -35,12 +35,6 @@ import TipsAhorro from "./pages/blog/TipsAhorro";
 // Contratar
 import ComoContratar from "./pages/contratar/ComoContratar";
 
-// Cobertura
-import CoberturaChihuahua from "./pages/cobertura/Chihuahua";
-import CoberturaTorreon from "./pages/cobertura/Torreon";
-import CoberturaDurango from "./pages/cobertura/Durango";
-import CoberturaMexicali from "./pages/cobertura/Mexicali";
-
 // Legal
 import AvisoPrivacidad from "./pages/legal/AvisoPrivacidad";
 import TerminosCondiciones from "./pages/legal/TerminosCondiciones";
@@ -85,12 +79,6 @@ const App = () => (
           
           {/* Contratar */}
           <Route path="/contratar/como-contratar/" element={<ComoContratar />} />
-          
-          {/* Cobertura */}
-          <Route path="/cobertura/chihuahua/" element={<CoberturaChihuahua />} />
-          <Route path="/cobertura/torreon-laguna/" element={<CoberturaTorreon />} />
-          <Route path="/cobertura/victoria-durango/" element={<CoberturaDurango />} />
-          <Route path="/cobertura/mexicali/" element={<CoberturaMexicali />} />
           
           {/* Legal */}
           <Route path="/aviso-de-privacidad/" element={<AvisoPrivacidad />} />
