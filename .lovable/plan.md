@@ -1,25 +1,33 @@
 
-# Agregar Imagen Flotilla ECOGAS a Quiénes Somos
+# Mejorar Legibilidad de Botones en Servicios/Hogar
 
-## Cambios a Realizar
+## Problema Actual
+Los botones "Cómo Contratar" y "Contacto" usan `variant="outline"` con clases `border-white text-white hover:bg-white/10`, lo que hace que el texto blanco sobre fondo azul con borde delgado sea difícil de leer.
 
-### 1. Copiar imagen a assets
-- Copiar `user-uploads://Flotilla_Ecogas-30.jpg` a `src/assets/flotilla-ecogas-30.jpg`
+## Solución
+Cambiar ambos botones para usar un estilo similar al botón del teléfono - fondo blanco con texto azul (primary) que ofrece excelente contraste.
 
-### 2. Actualizar página Quiénes Somos
-**Archivo:** `src/pages/empresa/QuienesSomos.tsx`
+## Cambios
 
-- Remover import de `ImagePlaceholder`
-- Agregar import de la nueva imagen: `import flotillaEcogas from "@/assets/flotilla-ecogas-30.jpg";`
-- Reemplazar el componente `<ImagePlaceholder>` con una etiqueta `<img>`:
+**Archivo:** `src/pages/servicios/Hogar.tsx`
 
+### Líneas 121-126 (Botón "Cómo Contratar")
 ```tsx
-<img 
-  src={flotillaEcogas}
-  alt="Flotilla ECOGAS - Equipo de trabajo con vehículos corporativos"
-  className="w-full rounded-lg mb-8 object-cover aspect-[21/9]"
-/>
+// De:
+<Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
+
+// A:
+<Button asChild variant="secondary" className="bg-white text-primary hover:bg-white/90">
+```
+
+### Líneas 127-129 (Botón "Contacto")
+```tsx
+// De:
+<Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
+
+// A:
+<Button asChild variant="secondary" className="bg-white text-primary hover:bg-white/90">
 ```
 
 ## Resultado
-La imagen de la flotilla ECOGAS con el equipo de trabajo aparecerá en la sección corporativa de "Quiénes Somos", reemplazando el placeholder actual.
+Los tres botones tendrán el mismo estilo consistente: fondo blanco con texto azul institucional, proporcionando máximo contraste y legibilidad sobre el fondo azul.
