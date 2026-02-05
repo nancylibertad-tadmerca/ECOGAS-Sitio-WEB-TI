@@ -162,7 +162,7 @@ const Index = () => {
               <div className="w-16 h-16 mx-auto rounded-full bg-primary-foreground/10 flex items-center justify-center">
                 <Shield className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-semibold">Seguridad</h3>
+              <h3 className="text-xl font-semibold">Crear relaciones positivas</h3>
               <p className="opacity-90">
                 El gas natural es más ligero que el aire y se disipa rápidamente, 
                 reduciendo riesgos de acumulación.
