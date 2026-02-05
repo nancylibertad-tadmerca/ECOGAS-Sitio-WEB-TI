@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
 import PageBreadcrumb from "@/components/shared/PageBreadcrumb";
-import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
 import { SITE_CONFIG } from "@/lib/constants";
+import flotillaEcogas from "@/assets/flotilla-ecogas-30.jpg";
 
 const QuienesSomos = () => {
   return (
@@ -22,10 +22,10 @@ const QuienesSomos = () => {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Quiénes Somos</h1>
           
-          <ImagePlaceholder 
-            text="Imagen corporativa ECOGAS" 
-            aspectRatio="wide"
-            className="mb-8"
+          <img 
+            src={flotillaEcogas}
+            alt="Flotilla ECOGAS - Equipo de trabajo con vehículos corporativos"
+            className="w-full rounded-lg mb-8 object-cover aspect-[21/9]"
           />
           
           <div className="prose prose-lg max-w-none mb-12">
