@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
 import PageBreadcrumb from "@/components/shared/PageBreadcrumb";
-import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
+import equipoVoluntariadoImg from "@/assets/equipo-ecogas-voluntariado.jpg";
 
 const EmpresaResponsable = () => {
   const programas = [
@@ -44,10 +44,10 @@ const EmpresaResponsable = () => {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Empresa Responsable</h1>
           
-          <ImagePlaceholder 
-            text="Imagen de programa social ECOGAS" 
-            aspectRatio="wide"
-            className="mb-8"
+          <img 
+            src={equipoVoluntariadoImg} 
+            alt="Equipo ECOGAS en jornada de voluntariado comunitario" 
+            className="w-full rounded-lg object-cover aspect-[21/9] mb-8"
           />
           
           <div className="prose prose-lg max-w-none mb-12">
