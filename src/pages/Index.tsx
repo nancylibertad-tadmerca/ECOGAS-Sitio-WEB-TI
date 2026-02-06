@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Layout from "@/components/layout/Layout";
 import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
 import { SITE_CONFIG } from "@/lib/constants";
+import domingoFamiliaImg from "@/assets/domingo-familia-hero.jpg";
 const Index = () => {
   return <Layout>
       {/* SEO */}
@@ -38,7 +39,7 @@ const Index = () => {
               </div>
             </div>
             <div className="relative">
-              <ImagePlaceholder text="Hero image - familia usando gas natural" aspectRatio="video" className="shadow-2xl" />
+              <img src={domingoFamiliaImg} alt="Familia disfrutando un domingo con gas natural" className="w-full rounded-lg object-cover aspect-video shadow-2xl" />
             </div>
           </div>
         </div>
