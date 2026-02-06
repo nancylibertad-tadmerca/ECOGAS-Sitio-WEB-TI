@@ -48,7 +48,7 @@ const TipsAhorro = () => {
           
           <img 
             src={clientaAhorroImg} 
-            alt="Clienta revisando su recibo de gas natural con satisfacción" 
+            alt="Colaboradora ECOGAS dando servicio al cliente" 
             className="w-full rounded-lg object-cover aspect-[21/9] mb-8"
           />
           
