@@ -6,6 +6,7 @@ import Layout from "@/components/layout/Layout";
 import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
 import { SITE_CONFIG } from "@/lib/constants";
 import domingoFamiliaImg from "@/assets/domingo-familia-hero.jpg";
+import tecnicoGasImg from "@/assets/tecnico-gas-natural.jpg";
 const Index = () => {
   return <Layout>
       {/* SEO */}
@@ -117,7 +118,7 @@ const Index = () => {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <ImagePlaceholder text="Imagen ilustrativa gas natural" aspectRatio="video" />
+              <img src={tecnicoGasImg} alt="Técnico ECOGAS explicando medidor de gas natural a clienta" className="w-full rounded-lg object-cover aspect-video" />
             </div>
             <div className="space-y-6">
               <h2 className="text-3xl font-bold">¿Qué es el gas natural?</h2>
