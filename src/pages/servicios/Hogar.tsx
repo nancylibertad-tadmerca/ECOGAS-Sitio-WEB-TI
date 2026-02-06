@@ -5,8 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Layout from "@/components/layout/Layout";
 import PageBreadcrumb from "@/components/shared/PageBreadcrumb";
-import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
 import { SITE_CONFIG } from "@/lib/constants";
+import cocinaFamiliaImg from "@/assets/cocina-familia-hogar.jpg";
 
 const Hogar = () => {
   const beneficios = [
@@ -61,10 +61,10 @@ const Hogar = () => {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Gas Natural para tu Hogar</h1>
           
-          <ImagePlaceholder 
-            text="Familia usando gas natural en casa" 
-            aspectRatio="wide"
-            className="mb-8"
+          <img 
+            src={cocinaFamiliaImg} 
+            alt="Familia cocinando con gas natural en su hogar" 
+            className="w-full rounded-lg object-cover aspect-[21/9] mb-8"
           />
           
           <p className="text-lg text-muted-foreground mb-12">
