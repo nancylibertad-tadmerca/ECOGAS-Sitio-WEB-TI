@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
 import PageBreadcrumb from "@/components/shared/PageBreadcrumb";
-import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
+import comercioCocinaImg from "@/assets/comercio-cocina-gas.png";
 
 const Comercios = () => {
   const beneficios = [
@@ -44,10 +44,10 @@ const Comercios = () => {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Gas Natural para Comercios</h1>
           
-          <ImagePlaceholder 
-            text="Comercio usando gas natural" 
-            aspectRatio="wide"
-            className="mb-8"
+          <img 
+            src={comercioCocinaImg} 
+            alt="Cocina comercial usando gas natural" 
+            className="w-full rounded-lg object-cover aspect-[21/9] mb-8"
           />
           
           <p className="text-lg text-muted-foreground mb-12">
