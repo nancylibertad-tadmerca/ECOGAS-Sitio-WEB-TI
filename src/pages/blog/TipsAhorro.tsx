@@ -3,7 +3,7 @@ import { Lightbulb, ThermometerSun, Wrench, Clock, ArrowRight } from "lucide-rea
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import PageBreadcrumb from "@/components/shared/PageBreadcrumb";
-import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
+import clientaAhorroImg from "@/assets/clienta-ahorro-recibo.jpg";
 
 const TipsAhorro = () => {
   const tips = [
@@ -46,10 +46,10 @@ const TipsAhorro = () => {
             Tips para Ahorrar Gas Natural en tu Hogar
           </h1>
           
-          <ImagePlaceholder 
-            text="Ilustración de ahorro de energía" 
-            aspectRatio="wide"
-            className="mb-8"
+          <img 
+            src={clientaAhorroImg} 
+            alt="Clienta revisando su recibo de gas natural con satisfacción" 
+            className="w-full rounded-lg object-cover aspect-[21/9] mb-8"
           />
           
           <div className="prose prose-lg max-w-none mb-12">
