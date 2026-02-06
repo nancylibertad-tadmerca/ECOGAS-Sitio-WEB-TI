@@ -49,7 +49,7 @@ const TipsAhorro = () => {
           <img 
             src={clientaAhorroImg} 
             alt="Colaboradora ECOGAS dando servicio al cliente" 
-            className="w-full rounded-lg object-cover object-top aspect-[21/9] mb-8"
+            className="w-full rounded-lg object-cover object-center aspect-[21/9] mb-8"
           />
           
           <div className="prose prose-lg max-w-none mb-12">
