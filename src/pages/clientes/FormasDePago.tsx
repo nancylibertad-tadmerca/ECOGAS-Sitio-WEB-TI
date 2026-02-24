@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CreditCard, Building, Store, Smartphone, ArrowRight, AlertCircle } from "lucide-react";
+import { CreditCard, Building, Store, Smartphone, ArrowRight, AlertCircle, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -13,7 +13,7 @@ const FormasDePago = () => {
       icon: Smartphone,
       title: "Pago en Línea",
       description: "Paga desde cualquier lugar con tu tarjeta de débito o crédito.",
-      link: "/clientes/pago-en-linea/"
+      link: SITE_CONFIG.portals.pagoEnLinea
     },
     {
       icon: Building,
@@ -82,10 +82,10 @@ const FormasDePago = () => {
                   )}
                   {metodo.link && (
                     <Button asChild variant="link" className="p-0 h-auto mt-2">
-                      <Link to={metodo.link}>
+                      <a href={metodo.link} target="_blank" rel="noopener noreferrer">
                         Ir a pagar en línea
-                        <ArrowRight className="ml-1 h-4 w-4" />
-                      </Link>
+                        <ExternalLink className="ml-1 h-4 w-4" />
+                      </a>
                     </Button>
                   )}
                 </CardContent>
@@ -95,13 +95,16 @@ const FormasDePago = () => {
 
           <div className="flex flex-wrap gap-4">
             <Button asChild>
-              <Link to="/clientes/pago-en-linea/">
+              <a href={SITE_CONFIG.portals.pagoEnLinea} target="_blank" rel="noopener noreferrer">
                 Pagar en Línea
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
             </Button>
             <Button asChild variant="outline">
-              <Link to="/clientes/recibo/">Consultar Recibo</Link>
+              <a href={SITE_CONFIG.portals.consultaRecibo} target="_blank" rel="noopener noreferrer">
+                Consultar Recibo
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
             </Button>
           </div>
         </div>
