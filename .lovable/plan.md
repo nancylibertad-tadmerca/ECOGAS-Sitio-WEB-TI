@@ -1,33 +1,30 @@
 
-# Mejorar Legibilidad de Botones en Servicios/Hogar
+## Plan: Reemplazar placeholder con video de YouTube
 
-## Problema Actual
-Los botones "Cómo Contratar" y "Contacto" usan `variant="outline"` con clases `border-white text-white hover:bg-white/10`, lo que hace que el texto blanco sobre fondo azul con borde delgado sea difícil de leer.
+### Cambio
+Sustituir el componente `ImagePlaceholder` en la pagina "¿Que es el Gas Natural?" por un video embebido de YouTube.
 
-## Solución
-Cambiar ambos botones para usar un estilo similar al botón del teléfono - fondo blanco con texto azul (primary) que ofrece excelente contraste.
+### Detalles tecnicos
 
-## Cambios
+**Archivo a modificar:** `src/pages/gas-natural/QueEs.tsx`
 
-**Archivo:** `src/pages/servicios/Hogar.tsx`
+1. Eliminar la importacion de `ImagePlaceholder`
+2. Reemplazar el componente `ImagePlaceholder` por un `iframe` de YouTube con el video `https://www.youtube.com/embed/waCflGIaPtU`
+3. El iframe mantendra el aspect ratio 16:9, bordes redondeados y estilos consistentes con el sitio
+4. Se incluiran atributos de seguridad y accesibilidad: `allow`, `allowFullScreen`, `title`, `loading="lazy"`
 
-### Líneas 121-126 (Botón "Cómo Contratar")
+**Codigo resultante (seccion relevante):**
 ```tsx
-// De:
-<Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
-
-// A:
-<Button asChild variant="secondary" className="bg-white text-primary hover:bg-white/90">
+<div className="aspect-video mb-8 rounded-lg overflow-hidden">
+  <iframe
+    src="https://www.youtube.com/embed/waCflGIaPtU"
+    title="¿Qué es el Gas Natural? - ECOGAS"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+    loading="lazy"
+    className="w-full h-full"
+  />
+</div>
 ```
 
-### Líneas 127-129 (Botón "Contacto")
-```tsx
-// De:
-<Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
-
-// A:
-<Button asChild variant="secondary" className="bg-white text-primary hover:bg-white/90">
-```
-
-## Resultado
-Los tres botones tendrán el mismo estilo consistente: fondo blanco con texto azul institucional, proporcionando máximo contraste y legibilidad sobre el fondo azul.
+Este es el unico archivo que necesita cambios.
