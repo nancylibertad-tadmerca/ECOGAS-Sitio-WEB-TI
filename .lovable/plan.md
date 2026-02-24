@@ -1,20 +1,23 @@
 
 
-## Plan: Integrar formulario real de HubSpot en la pagina Como Contratar
+## Plan: Reemplazar formulario de contacto en la pagina Contacto
 
-### Cambios en `src/pages/contratar/ComoContratar.tsx`
+### Unico cambio necesario
 
-1. Reemplazar la importacion de `HubSpotFormPlaceholder` por `HubSpotForm`
-2. Sustituir el componente placeholder por el formulario real con estos datos:
-   - **Portal ID:** 49715152
-   - **Form ID:** aa3bdd32-9678-453f-9de8-c2f065983720
-   - **Region:** na1
+Solo existe **una pagina** usando el formulario de contacto anterior (`1abea590-...`): la pagina **Contacto**.
 
-### Cambio en `src/lib/constants.ts`
+La pagina **Como Contratar** ya usa el formulario solicitado (`aa3bdd32-...`).
 
-3. Actualizar el valor de `hubspot.forms.quieroContratar` con el Form ID real: `aa3bdd32-9678-453f-9de8-c2f065983720`
+### Cambios en `src/pages/Contacto.tsx`
+
+- Cambiar el `formId` de `"1abea590-7764-4f4e-a53b-bfba4ab708b3"` a `"aa3bdd32-9678-453f-9de8-c2f065983720"`
+- Usar las constantes de `SITE_CONFIG` en lugar de valores hardcodeados
+
+### Cambios en `src/lib/constants.ts`
+
+- Actualizar `hubspot.forms.contacto` al nuevo Form ID: `"aa3bdd32-9678-453f-9de8-c2f065983720"`
 
 ### Archivos a modificar
-- **Editar:** `src/pages/contratar/ComoContratar.tsx`
+- **Editar:** `src/pages/Contacto.tsx`
 - **Editar:** `src/lib/constants.ts`
 
