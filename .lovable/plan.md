@@ -1,37 +1,21 @@
 
 
-## Plan: Integrar formulario real de HubSpot en la pagina de Contacto
+## Plan: Actualizar pagina Consultar Recibo con URL real y enlaces en tarjetas
 
-### Resumen
-Reemplazar el componente placeholder `HubSpotFormPlaceholder` en la pagina de Contacto con el formulario real de HubSpot, usando los datos proporcionados:
-- **Portal ID:** 49715152
-- **Form ID:** 1abea590-7764-4f4e-a53b-bfba4ab708b3
-- **Region:** na1
+### Cambios en `src/pages/clientes/Recibo.tsx`
 
-### Detalles tecnicos
+1. **Boton principal "Consultar Recibo"** (linea 53-55): Cambiar el texto a **"Portal Autoservicio"** y la URL a `https://clientes.ecogas.com.mx/react/master/#INDEX`
 
-**1. Crear componente reutilizable `HubSpotForm`** (`src/components/shared/HubSpotForm.tsx`)
-- Componente React que carga el script de HubSpot (`//js.hsforms.net/forms/embed/v2.js`) dinamicamente via `useEffect`
-- Renderiza el formulario en un contenedor `div` con un `ref`
-- Props: `portalId`, `formId`, `region`
-- Incluye estado de carga mientras el formulario se inicializa
+2. **Tarjeta "Historial de Consumo"** (lineas 79-85): Convertir el `div` en un enlace `<a>` que apunte a la misma URL, manteniendo el estilo visual
 
-**2. Modificar `src/pages/Contacto.tsx`**
-- Reemplazar `HubSpotFormPlaceholder` por el nuevo componente `HubSpotForm` con los valores reales:
+3. **Tarjeta "Descarga PDF"** (lineas 86-92): Convertir el `div` en un enlace `<a>` que apunte a la misma URL, manteniendo el estilo visual
 
-```tsx
-<HubSpotForm
-  portalId="49715152"
-  formId="1abea590-7764-4f4e-a53b-bfba4ab708b3"
-  region="na1"
-/>
-```
+### Cambio en `src/lib/constants.ts`
 
-**3. Actualizar `src/lib/constants.ts`**
-- Actualizar los valores placeholder de HubSpot con los datos reales del formulario de contacto
+4. Actualizar el valor de `portals.consultaRecibo` con la URL real: `https://clientes.ecogas.com.mx/react/master/#INDEX`
 
-### Archivos a modificar
-- **Nuevo:** `src/components/shared/HubSpotForm.tsx`
-- **Editar:** `src/pages/Contacto.tsx`
-- **Editar:** `src/lib/constants.ts`
+### Resultado
+- El boton principal dira "Portal Autoservicio" y abrira el portal real en nueva pestana
+- Las dos tarjetas inferiores seran clicables y tambien llevaran al portal real
+- La URL quedara centralizada en constants.ts para facilitar futuros cambios
 
