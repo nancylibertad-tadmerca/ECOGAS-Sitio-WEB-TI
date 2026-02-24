@@ -27,7 +27,7 @@ export const SITE_CONFIG = {
     region: "na1",
     forms: {
       contacto: "1abea590-7764-4f4e-a53b-bfba4ab708b3",
-      quieroContratar: "HUBSPOT_FORM_CONTRATAR", // Replace with actual Form ID
+      quieroContratar: "aa3bdd32-9678-453f-9de8-c2f065983720",
     },
   },
   

@@ -3,7 +3,7 @@ import { Search, FileText, Wrench, CheckCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import PageBreadcrumb from "@/components/shared/PageBreadcrumb";
-import HubSpotFormPlaceholder from "@/components/shared/HubSpotFormPlaceholder";
+import HubSpotForm from "@/components/shared/HubSpotForm";
 import { SITE_CONFIG } from "@/lib/constants";
 const ComoContratar = () => {
   const pasos = [{
@@ -86,7 +86,11 @@ const ComoContratar = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <h2 className="text-2xl font-bold mb-6">Solicita una cita sin comprommiso</h2>
-              <HubSpotFormPlaceholder formType="quieroContratar" title="Formulario de Contratación" />
+              <HubSpotForm 
+                portalId={SITE_CONFIG.hubspot.portalId}
+                formId={SITE_CONFIG.hubspot.forms.quieroContratar}
+                region={SITE_CONFIG.hubspot.region}
+              />
             </div>
 
             <div>
