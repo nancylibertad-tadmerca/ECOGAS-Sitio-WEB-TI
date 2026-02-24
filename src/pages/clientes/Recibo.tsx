@@ -10,7 +10,7 @@ const Recibo = () => {
   {
     numero: 1,
     titulo: "Ingresa al portal",
-    descripcion: "Haz clic en el botón 'Consultar Recibo' para acceder al portal."
+    descripcion: "Haz clic en el botón \"Da clic para ir al portal\" para acceder."
   },
   {
     numero: 2,
