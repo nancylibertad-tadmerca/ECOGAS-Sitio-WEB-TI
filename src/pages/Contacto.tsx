@@ -87,9 +87,9 @@ const Contacto = () => {
           <div>
             <h2 className="text-2xl font-bold mb-6">Envíanos un mensaje</h2>
             <HubSpotForm 
-              portalId="49715152"
-              formId="1abea590-7764-4f4e-a53b-bfba4ab708b3"
-              region="na1"
+              portalId={SITE_CONFIG.hubspot.portalId}
+              formId={SITE_CONFIG.hubspot.forms.contacto}
+              region={SITE_CONFIG.hubspot.region}
             />
           </div>
 
