@@ -39,17 +39,13 @@ const Cobertura = () => {
             50% { opacity: 0.35; transform: translate(-50%, -100%) scale(0.85); }
           }
         `}</style>
-        <div className="relative max-w-3xl mx-auto mb-12">
-          {/* Map with cyan overlay */}
+        <div className="relative max-w-3xl mx-auto mb-12 px-4 md:px-0">
           <div className="relative rounded-lg overflow-hidden">
-            <div className="bg-secondary rounded-lg">
-              <img
-                src={mapaImg}
-                alt="Mapa de México - Cobertura ECOGAS"
-                className="w-full h-auto block"
-                style={{ mixBlendMode: "multiply" }}
-              />
-            </div>
+            <img
+              src={mapaImg}
+              alt="Mapa de México - Cobertura ECOGAS"
+              className="w-full h-auto block"
+            />
 
             {/* Flame pins */}
             {cities.map((city, i) => (
@@ -61,7 +57,7 @@ const Cobertura = () => {
                 <img
                   src={flamaImg}
                   alt={city.name}
-                  className="h-8 md:h-10 w-auto drop-shadow-lg"
+                  className="h-6 md:h-10 w-auto drop-shadow-lg"
                   style={{
                     animation: `flame-blink 1.8s ease-in-out infinite`,
                     animationDelay: `${i * 0.4}s`,
@@ -69,9 +65,12 @@ const Cobertura = () => {
                   }}
                 />
                 <span
-                  className="text-[10px] md:text-xs font-bold text-foreground bg-background/80 px-1.5 py-0.5 rounded shadow-sm whitespace-nowrap -mt-1"
+                  className="text-[8px] md:text-xs font-bold text-foreground bg-background/80 px-1 md:px-1.5 py-0.5 rounded shadow-sm whitespace-nowrap -mt-1"
                 >
                   {city.name}
+                </span>
+                <span className="text-[6px] md:text-[10px] text-muted-foreground whitespace-nowrap">
+                  {city.state}
                 </span>
               </div>
             ))}
