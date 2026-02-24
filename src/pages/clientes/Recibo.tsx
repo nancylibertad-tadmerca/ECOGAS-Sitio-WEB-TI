@@ -20,7 +20,7 @@ const Recibo = () => {
   {
     numero: 3,
     titulo: "Consulta y descarga",
-    descripcion: "Visualiza tu factura actual y descárgalo en formato PDF."
+    descripcion: "Visualiza tu factura actual y descárgala en formato PDF."
   }];
 
 
