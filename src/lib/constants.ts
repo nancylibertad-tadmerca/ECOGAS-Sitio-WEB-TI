@@ -17,7 +17,7 @@ export const SITE_CONFIG = {
   
   // External Portal URLs (Placeholders - replace with actual URLs)
   portals: {
-    pagoEnLinea: "https://portal-pago.ecogas.com.mx", // Placeholder
+    pagoEnLinea: "https://clientes.ecogas.com.mx/react/master/#INDEX",
     consultaRecibo: "https://clientes.ecogas.com.mx/react/master/#INDEX",
   },
   
@@ -73,8 +73,8 @@ export const NAV_LINKS = [
     label: "Soy Cliente",
     children: [
       { label: "Formas de Pago", href: "/clientes/formas-de-pago/" },
-      { label: "Pago en Línea", href: "/clientes/pago-en-linea/" },
-      { label: "Consultar Recibo", href: "/clientes/recibo/" },
+      { label: "Pago en Línea", href: "https://clientes.ecogas.com.mx/react/master/#INDEX", external: true },
+      { label: "Consultar Recibo", href: "https://clientes.ecogas.com.mx/react/master/#INDEX", external: true },
       { label: "Tips de Ahorro", href: "/blog/ahorro/tips-ahorrar-gas-natural/" },
     ],
   },

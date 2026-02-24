@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Layout from "@/components/layout/Layout";
 import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
 import { SITE_CONFIG } from "@/lib/constants";
+const portalUrl = SITE_CONFIG.portals.pagoEnLinea;
 import domingoFamiliaImg from "@/assets/domingo-familia-hero.jpg";
 import tecnicoGasImg from "@/assets/tecnico-gas-natural.jpg";
 const Index = () => {
@@ -69,7 +70,7 @@ const Index = () => {
             </Card>
             
             <Card className="group hover:shadow-lg transition-shadow cursor-pointer">
-              <Link to="/clientes/pago-en-linea/">
+              <a href={portalUrl} target="_blank" rel="noopener noreferrer">
                 <CardHeader className="text-center">
                   <CreditCard className="h-10 w-10 mx-auto text-primary mb-2 group-hover:scale-110 transition-transform" />
                   <CardTitle className="text-lg">Pagos</CardTitle>
@@ -79,7 +80,7 @@ const Index = () => {
                     Paga en línea o consulta opciones
                   </CardDescription>
                 </CardContent>
-              </Link>
+              </a>
             </Card>
             
             <Card className="group hover:shadow-lg transition-shadow cursor-pointer">
@@ -217,7 +218,7 @@ const Index = () => {
             </Card>
             
             <Card className="hover:shadow-lg transition-shadow">
-              <Link to="/clientes/pago-en-linea/">
+              <a href={portalUrl} target="_blank" rel="noopener noreferrer">
                 <CardHeader>
                   <Zap className="h-8 w-8 text-primary mb-2" />
                   <CardTitle>Pago en Línea</CardTitle>
@@ -227,11 +228,11 @@ const Index = () => {
                     Paga tu recibo de forma rápida y segura desde cualquier lugar.
                   </CardDescription>
                 </CardContent>
-              </Link>
+              </a>
             </Card>
             
             <Card className="hover:shadow-lg transition-shadow">
-              <Link to="/clientes/recibo/">
+              <a href={portalUrl} target="_blank" rel="noopener noreferrer">
                 <CardHeader>
                   <FileText className="h-8 w-8 text-primary mb-2" />
                   <CardTitle>Consultar Recibo</CardTitle>
@@ -241,7 +242,7 @@ const Index = () => {
                     Revisa tu consumo y descarga tu recibo digital.
                   </CardDescription>
                 </CardContent>
-              </Link>
+              </a>
             </Card>
           </div>
         </div>

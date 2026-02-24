@@ -73,10 +73,10 @@ const Footer = () => {
                 <Link to="/clientes/formas-de-pago/" className="hover:opacity-80 transition-opacity">Formas de Pago</Link>
               </li>
               <li>
-                <Link to="/clientes/pago-en-linea/" className="hover:opacity-80 transition-opacity">Pago en Línea</Link>
+                <a href={SITE_CONFIG.portals.pagoEnLinea} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">Pago en Línea</a>
               </li>
               <li>
-                <Link to="/clientes/recibo/" className="hover:opacity-80 transition-opacity">Consultar Recibo</Link>
+                <a href={SITE_CONFIG.portals.consultaRecibo} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">Consultar Recibo</a>
               </li>
               <li>
                 <Link to="/blog/ahorro/tips-ahorrar-gas-natural/" className="hover:opacity-80 transition-opacity">Tips de Ahorro</Link>
