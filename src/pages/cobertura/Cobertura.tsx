@@ -12,7 +12,7 @@ import mapaImg from "@/assets/mapa-mexico.png";
 const cities = [
   { name: "Mexicali", state: "Baja California", x: 12, y: 12, mapEmbed: "https://www.google.com/maps/d/embed?mid=1iiZmgyP3R0ZEu6t2qJJ1t2gRgVY&ehbc=2E312F" },
   { name: "Chihuahua", state: "Chihuahua", x: 32, y: 22, mapEmbed: "https://www.google.com/maps/d/embed?mid=10fep7Se2Bcx4N7vh1DHAjlGO47U&ehbc=2E312F" },
-  { name: "Torreón / La Laguna", state: "Laguna / Durango", x: 40, y: 38 },
+  { name: "Torreón / La Laguna", state: "Torreón / Laguna", x: 40, y: 38 },
   { name: "Victoria de Durango", state: "Durango", x: 34, y: 42 },
 ];
 
