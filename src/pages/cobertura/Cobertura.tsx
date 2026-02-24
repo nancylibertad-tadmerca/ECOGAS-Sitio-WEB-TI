@@ -6,7 +6,6 @@ import Layout from "@/components/layout/Layout";
 import PageBreadcrumb from "@/components/shared/PageBreadcrumb";
 import { SITE_CONFIG } from "@/lib/constants";
 import mapaImg from "@/assets/mapa-mexico.png";
-import flamaImg from "@/assets/flama-ecogas.png";
 
 const cities = [
   { name: "Mexicali", state: "Baja California", x: 12, y: 12 },
@@ -33,48 +32,12 @@ const Cobertura = () => {
         </div>
 
         {/* Map Section */}
-        <style>{`
-          @keyframes flame-blink {
-            0%, 100% { opacity: 1; transform: translate(-50%, -100%) scale(1); }
-            50% { opacity: 0.35; transform: translate(-50%, -100%) scale(0.85); }
-          }
-        `}</style>
-        <div className="relative max-w-3xl mx-auto mb-12 px-4 md:px-0">
-          <div className="relative rounded-lg overflow-hidden">
-            <img
-              src={mapaImg}
-              alt="Mapa de México - Cobertura ECOGAS"
-              className="w-full h-auto block"
-            />
-
-            {/* Flame pins */}
-            {cities.map((city, i) => (
-              <div
-                key={city.name}
-                className="absolute flex flex-col items-center pointer-events-none"
-                style={{ left: `${city.x}%`, top: `${city.y}%` }}
-              >
-                <img
-                  src={flamaImg}
-                  alt={city.name}
-                  className="h-6 md:h-10 w-auto drop-shadow-lg"
-                  style={{
-                    animation: `flame-blink 1.8s ease-in-out infinite`,
-                    animationDelay: `${i * 0.4}s`,
-                    transform: "translate(-50%, -100%)",
-                  }}
-                />
-                <span
-                  className="text-[8px] md:text-xs font-bold text-foreground bg-background/80 px-1 md:px-1.5 py-0.5 rounded shadow-sm whitespace-nowrap -mt-1"
-                >
-                  {city.name}
-                </span>
-                <span className="text-[6px] md:text-[10px] text-muted-foreground whitespace-nowrap">
-                  {city.state}
-                </span>
-              </div>
-            ))}
-          </div>
+        <div className="max-w-3xl mx-auto mb-12 px-4 md:px-0">
+          <img
+            src={mapaImg}
+            alt="Mapa de México - Cobertura ECOGAS"
+            className="w-full h-auto block rounded-lg animate-fade-in animate-[pulse_3s_ease-in-out_infinite]"
+          />
         </div>
 
         {/* City Cards */}
