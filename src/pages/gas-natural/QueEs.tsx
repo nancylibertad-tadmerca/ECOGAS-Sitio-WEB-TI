@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Layout from "@/components/layout/Layout";
 import PageBreadcrumb from "@/components/shared/PageBreadcrumb";
-import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
+
 
 const QueEs = () => {
   const faqs = [
@@ -40,11 +40,16 @@ const QueEs = () => {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">¿Qué es el Gas Natural?</h1>
           
-          <ImagePlaceholder 
-            text="Ilustración educativa sobre gas natural" 
-            aspectRatio="wide"
-            className="mb-8"
-          />
+          <div className="aspect-video mb-8 rounded-lg overflow-hidden">
+            <iframe
+              src="https://www.youtube.com/embed/waCflGIaPtU"
+              title="¿Qué es el Gas Natural? - ECOGAS"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              loading="lazy"
+              className="w-full h-full"
+            />
+          </div>
           
           <div className="prose prose-lg max-w-none mb-12">
             <p className="text-lg text-muted-foreground">
