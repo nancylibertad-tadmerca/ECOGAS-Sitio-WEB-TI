@@ -26,7 +26,7 @@ export const SITE_CONFIG = {
     portalId: "49715152",
     region: "na1",
     forms: {
-      contacto: "1abea590-7764-4f4e-a53b-bfba4ab708b3",
+      contacto: "aa3bdd32-9678-453f-9de8-c2f065983720",
       quieroContratar: "aa3bdd32-9678-453f-9de8-c2f065983720",
     },
   },
