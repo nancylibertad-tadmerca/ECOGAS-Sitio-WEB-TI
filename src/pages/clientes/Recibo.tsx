@@ -15,7 +15,7 @@ const Recibo = () => {
   {
     numero: 2,
     titulo: "Ingresa tu número de cliente",
-    descripcion: "Escribe tu número de cliente que aparece en tu recibo anterior."
+    descripcion: "Escribe tu número de cliente que aparece en tu factura anterior."
   },
   {
     numero: 3,
