@@ -7,22 +7,22 @@ import { SITE_CONFIG } from "@/lib/constants";
 
 const Recibo = () => {
   const pasos = [
-    {
-      numero: 1,
-      titulo: "Ingresa al portal",
-      descripcion: "Haz clic en el botón 'Consultar Recibo' para acceder al portal."
-    },
-    {
-      numero: 2,
-      titulo: "Ingresa tu número de cliente",
-      descripcion: "Escribe tu número de cliente que aparece en tu recibo anterior."
-    },
-    {
-      numero: 3,
-      titulo: "Consulta y descarga",
-      descripcion: "Visualiza tu recibo actual y descárgalo en formato PDF."
-    },
-  ];
+  {
+    numero: 1,
+    titulo: "Ingresa al portal",
+    descripcion: "Haz clic en el botón 'Consultar Recibo' para acceder al portal."
+  },
+  {
+    numero: 2,
+    titulo: "Ingresa tu número de cliente",
+    descripcion: "Escribe tu número de cliente que aparece en tu recibo anterior."
+  },
+  {
+    numero: 3,
+    titulo: "Consulta y descarga",
+    descripcion: "Visualiza tu recibo actual y descárgalo en formato PDF."
+  }];
+
 
   return (
     <Layout>
@@ -31,27 +31,27 @@ const Recibo = () => {
       
       <div className="container py-8 md:py-12">
         <PageBreadcrumb items={[
-          { label: "Soy Cliente", href: "/clientes/formas-de-pago/" },
-          { label: "Consultar Recibo" }
-        ]} />
+        { label: "Soy Cliente", href: "/clientes/formas-de-pago/" },
+        { label: "Consultar Recibo" }]
+        } />
         
         <div className="max-w-2xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Consultar Recibo</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Consultar Tu Factura </h1>
           
-          <p className="text-lg text-muted-foreground mb-8">
-            Accede a tu recibo digital, revisa tu consumo y mantén un historial de tus pagos.
+          <p className="text-lg text-muted-foreground mb-8">Accede a tu factura digital, revisa tu consumo y mantén un historial de tus pagos.
+
           </p>
 
           {/* Main CTA */}
           <div className="bg-primary text-primary-foreground rounded-lg p-8 mb-12">
             <FileText className="h-12 w-12 mx-auto mb-4" />
-            <h2 className="text-2xl font-bold mb-4">Portal de Recibos</h2>
+            <h2 className="text-2xl font-bold mb-4">Portal de Autoservicio </h2>
             <p className="opacity-90 mb-6">
-              Consulta y descarga tu recibo de gas natural.
+              Consulta y descarga tu factura de gas natural.
             </p>
             <Button asChild size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
               <a href={SITE_CONFIG.portals.consultaRecibo} target="_blank" rel="noopener noreferrer">
-                Portal Autoservicio
+                Da clic para ir al Portal     
               </a>
             </Button>
           </div>
@@ -60,8 +60,8 @@ const Recibo = () => {
           <div className="text-left mb-12">
             <h2 className="text-xl font-bold mb-6">¿Cómo consultar tu recibo?</h2>
             <div className="space-y-6">
-              {pasos.map((paso) => (
-                <div key={paso.numero} className="flex gap-4">
+              {pasos.map((paso) =>
+              <div key={paso.numero} className="flex gap-4">
                   <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold shrink-0">
                     {paso.numero}
                   </div>
@@ -70,26 +70,26 @@ const Recibo = () => {
                     <p className="text-muted-foreground">{paso.descripcion}</p>
                   </div>
                 </div>
-              ))}
+              )}
             </div>
           </div>
 
           {/* Features */}
           <div className="grid md:grid-cols-2 gap-6 mb-12">
-            <a href={SITE_CONFIG.portals.consultaRecibo} target="_blank" rel="noopener noreferrer" className="p-6 bg-muted rounded-lg text-left block hover:bg-muted/80 transition-colors">
+            <div className="p-6 bg-muted rounded-lg text-left">
               <Search className="h-8 w-8 text-primary mb-3" />
               <h3 className="font-semibold mb-2">Historial de Consumo</h3>
               <p className="text-sm text-muted-foreground">
                 Revisa tu consumo de meses anteriores y compara tu uso.
               </p>
-            </a>
-            <a href={SITE_CONFIG.portals.consultaRecibo} target="_blank" rel="noopener noreferrer" className="p-6 bg-muted rounded-lg text-left block hover:bg-muted/80 transition-colors">
+            </div>
+            <div className="p-6 bg-muted rounded-lg text-left">
               <Download className="h-8 w-8 text-primary mb-3" />
               <h3 className="font-semibold mb-2">Descarga PDF</h3>
               <p className="text-sm text-muted-foreground">
                 Guarda o imprime tu recibo en formato digital.
               </p>
-            </a>
+            </div>
           </div>
 
           {/* Support */}
@@ -111,8 +111,8 @@ const Recibo = () => {
           </div>
         </div>
       </div>
-    </Layout>
-  );
+    </Layout>);
+
 };
 
 export default Recibo;
