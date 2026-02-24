@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
 import PageBreadcrumb from "@/components/shared/PageBreadcrumb";
-import HubSpotFormPlaceholder from "@/components/shared/HubSpotFormPlaceholder";
+import HubSpotForm from "@/components/shared/HubSpotForm";
 import { SITE_CONFIG } from "@/lib/constants";
 
 const Contacto = () => {
@@ -86,9 +86,10 @@ const Contacto = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
             <h2 className="text-2xl font-bold mb-6">Envíanos un mensaje</h2>
-            <HubSpotFormPlaceholder 
-              formType="contacto" 
-              title="Formulario de Contacto General"
+            <HubSpotForm 
+              portalId="49715152"
+              formId="1abea590-7764-4f4e-a53b-bfba4ab708b3"
+              region="na1"
             />
           </div>
 
