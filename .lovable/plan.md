@@ -1,51 +1,33 @@
 
 
-## Plan: Mapa de Mexico con imagen real y pines de flama ECOGAS animados
+## Plan: Actualizar mapa de cobertura con nueva imagen, nombres de ciudades y optimizacion movil
 
 ### Que se hara
 
-Reemplazar el mapa SVG simplificado actual por la imagen real del mapa de Mexico que subiste, coloreada en Azul Cian. Los pines circulares se reemplazaran por la imagen de la flama ECOGAS con una animacion de parpadeo.
+1. **Reemplazar la imagen del mapa** por la nueva imagen proporcionada (`Mapa_2.png`), que muestra Mexico con contornos suaves en azul claro y los pines de flama ECOGAS ya integrados visualmente como referencia.
 
-### Cambios en `src/pages/cobertura/Cobertura.tsx`
+2. **Copiar la nueva imagen** `Mapa_2.png` a `src/assets/mapa-mexico.png` (reemplazando la actual).
 
-**1. Copiar las imagenes al proyecto:**
-- `Mapa_México.png` a `src/assets/mapa-mexico.png` (mapa base)
-- `FLAMA_ECOGAS-2.png` a `src/assets/flama-ecogas.png` (pin de flama)
-
-**2. Reemplazar la seccion del mapa SVG completa:**
-- Eliminar todo el bloque `<svg>` con los paths simplificados de Mexico
-- Usar un contenedor `<div>` con `position: relative`
-- Colocar la imagen del mapa de Mexico como fondo/imagen principal con un filtro CSS para colorearla en **Azul Cian #0085AD** (usando una combinacion de `filter` y un overlay de color, o aplicando un `mix-blend-mode` con un div de fondo azul cian)
-- Sobre el mapa, posicionar 4 imagenes de la flama ECOGAS como pines absolutos en las coordenadas correspondientes a cada ciudad
-
-**3. Pines con flama ECOGAS animados:**
-- Cada pin sera un `<img>` de la flama posicionado con `position: absolute` usando porcentajes relativos al mapa
-- Animacion CSS de parpadeo (blink/pulse): la flama alterna entre opacidad completa y reducida, creando un efecto de "parpadeando"
-- Etiqueta de texto debajo de cada pin con el nombre de la ciudad y estado
-- Coordenadas aproximadas (en porcentaje del contenedor):
-  - Mexicali, Baja California: ~12%, ~12%
-  - Chihuahua Capital: ~32%, ~22%
-  - Torreon / La Laguna: ~40%, ~38%
-  - Victoria de Durango: ~34%, ~42%
-
-**4. Mantener sin cambios:**
-- Breadcrumb, titulo, descripcion
-- Tarjetas de ciudades debajo del mapa
-- Seccion CTA inferior
+3. **Actualizar `src/pages/cobertura/Cobertura.tsx`**:
+   - Quitar el overlay `bg-secondary` con `mix-blend-mode: multiply` ya que la nueva imagen ya tiene el estilo correcto (fondo blanco con contornos azul claro)
+   - Mantener los pines de flama ECOGAS animados (`flama-ecogas.png`) con la animacion de parpadeo
+   - Agregar etiquetas visibles con el nombre de cada ciudad y estado debajo de cada pin
+   - Ajustar coordenadas de los pines para que coincidan con la nueva imagen
+   - **Optimizacion movil**:
+     - Reducir el tamano de las flamas en pantallas pequenas (`h-6` en movil vs `h-10` en desktop)
+     - Reducir el tamano del texto de las etiquetas de ciudad en movil (`text-[8px]` vs `text-xs`)
+     - Agregar padding lateral para que los pines en los bordes (Mexicali) no se corten
+     - Asegurar que el mapa ocupe el ancho completo en movil sin desbordamiento
 
 ### Detalle tecnico
 
-**Colorear el mapa en Azul Cian:**
-El mapa PNG es una silueta con contornos negros sobre fondo blanco. Se aplicara un enfoque de overlay: el mapa se coloca como imagen con `mix-blend-mode: multiply` sobre un fondo `#0085AD`, o se usa un filtro CSS (`brightness(0) saturate(100%)` + `invert` + `sepia` + `hue-rotate`) para teñirlo en azul cian.
+**Archivo a copiar:** `user-uploads://Mapa_2.png` -> `src/assets/mapa-mexico.png`
 
-**Animacion de parpadeo de los pines:**
-```css
-@keyframes flame-blink {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.9); }
-}
-```
-Cada pin tendra un `animation-delay` diferente para que no parpadeen todos al mismo tiempo.
-
-**Tamano de los pines:** Aproximadamente 30-40px de alto, responsive con unidades relativas.
+**Archivo a editar:** `src/pages/cobertura/Cobertura.tsx`
+- Eliminar el wrapper `<div className="bg-secondary">` y el `mixBlendMode: "multiply"` ya que la nueva imagen no necesita overlay de color
+- Mantener la animacion `@keyframes flame-blink` existente
+- Cada pin mostrara: flama animada + nombre de ciudad + estado en una etiqueta debajo
+- Clases responsive para tamano de flama: `className="h-6 md:h-10"`
+- Clases responsive para etiquetas: `className="text-[8px] md:text-xs"`
+- Contenedor del mapa con `px-4 md:px-0` para margen lateral en movil
 
