@@ -1,19 +1,48 @@
-## Plan: Quitar flamas animadas y animar la imagen del mapa
+
+
+## Plan: Incorporar Google Maps interactivo en la tarjeta de Chihuahua
 
 ### Que se hara
 
-1. **Eliminar los pines de flama animados** del mapa (el bloque que renderiza las imagenes de flama con la animacion `flame-blink` sobre cada ciudad).
-2. **Animar la imagen del mapa de Mexico** con un efecto sutil de entrada y/o pulso continuo para darle vida. Se usara una combinacion de:
-  - Animacion de entrada `fade-in` + `scale-in` al cargar la pagina (el mapa aparece suavemente)
-  - Un efecto de pulso suave continuo (`pulse`) para que el mapa "respire" ligeramente
-  &nbsp;
+Al dar clic en la tarjeta de **Chihuahua**, se abrira un **Dialog (modal)** que mostrara el mapa de Google Maps embebido con la red de distribucion de gas natural de ECOGAS. Las demas tarjetas de ciudades se mantienen igual por ahora.
+
+### Cambios en `src/pages/cobertura/Cobertura.tsx`
+
+**1. Agregar estado y componentes de Dialog:**
+- Importar `useState` de React
+- Importar `Dialog, DialogContent, DialogHeader, DialogTitle` del componente UI existente
+- Agregar un estado `selectedCity` para controlar cual ciudad tiene el modal abierto
+
+**2. Agregar datos de mapa por ciudad:**
+- Extender el array `cities` con una propiedad opcional `mapEmbed` que contenga la URL del iframe de Google Maps
+- Solo Chihuahua tendra esta propiedad por ahora:
+  ```
+  mapEmbed: "https://www.google.com/maps/d/embed?mid=10fep7Se2Bcx4N7vh1DHAjlGO47U&ehbc=2E312F"
+  ```
+
+**3. Hacer clickeable la tarjeta de Chihuahua:**
+- Las tarjetas que tengan `mapEmbed` se convertiran en clickeables con `cursor-pointer` y un indicador visual (texto "Ver mapa" o icono)
+- Al hacer clic, se abre el Dialog con el iframe de Google Maps
+
+**4. Dialog con el mapa embebido:**
+- Modal centrado con un iframe responsive que ocupe el ancho completo del dialog
+- Titulo del dialog: "Cobertura en Chihuahua"
+- El iframe tendra dimensiones responsivas (ancho completo, alto ~400px en movil, ~480px en desktop)
+- Boton de cierre estandar del componente Dialog
 
 ### Detalle tecnico
 
-**Archivo a editar:** `src/pages/cobertura/Cobertura.tsx`
+**Componentes utilizados:** Se reutiliza el componente `Dialog` ya existente en `src/components/ui/dialog.tsx` (Radix UI).
 
-- Eliminar el import de `flamaImg` (ya no se usa)
-- Eliminar el bloque `<style>` con la animacion `@keyframes flame-blink`
-- Eliminar el bloque `{cities.map(...)}` que renderiza los pines de flama sobre el mapa
-- Agregar clases de animacion a la imagen del mapa: `animate-fade-in` para la entrada y una animacion sutil de pulso con CSS (`animate-[pulse_3s_ease-in-out_infinite]`) para un efecto continuo de "respiracion"
-- La imagen del mapa quedara limpia, sin pines superpuestos, y con movimiento propio
+**Estructura del modal:**
+```
+Dialog -> DialogContent (max-w-2xl)
+  -> DialogHeader -> DialogTitle ("Cobertura en Chihuahua")
+  -> iframe (src=Google Maps embed URL, w-full, h-[400px] md:h-[480px], rounded, border-0)
+```
+
+**Interaccion:**
+- Clic en tarjeta de Chihuahua -> abre modal con mapa
+- Clic fuera del modal o en X -> cierra modal
+- Las otras 3 tarjetas no tienen accion de clic (sin `mapEmbed`)
+
