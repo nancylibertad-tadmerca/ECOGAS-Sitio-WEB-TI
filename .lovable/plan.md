@@ -1,30 +1,37 @@
 
-## Plan: Reemplazar placeholder con video de YouTube
 
-### Cambio
-Sustituir el componente `ImagePlaceholder` en la pagina "¿Que es el Gas Natural?" por un video embebido de YouTube.
+## Plan: Integrar formulario real de HubSpot en la pagina de Contacto
+
+### Resumen
+Reemplazar el componente placeholder `HubSpotFormPlaceholder` en la pagina de Contacto con el formulario real de HubSpot, usando los datos proporcionados:
+- **Portal ID:** 49715152
+- **Form ID:** 1abea590-7764-4f4e-a53b-bfba4ab708b3
+- **Region:** na1
 
 ### Detalles tecnicos
 
-**Archivo a modificar:** `src/pages/gas-natural/QueEs.tsx`
+**1. Crear componente reutilizable `HubSpotForm`** (`src/components/shared/HubSpotForm.tsx`)
+- Componente React que carga el script de HubSpot (`//js.hsforms.net/forms/embed/v2.js`) dinamicamente via `useEffect`
+- Renderiza el formulario en un contenedor `div` con un `ref`
+- Props: `portalId`, `formId`, `region`
+- Incluye estado de carga mientras el formulario se inicializa
 
-1. Eliminar la importacion de `ImagePlaceholder`
-2. Reemplazar el componente `ImagePlaceholder` por un `iframe` de YouTube con el video `https://www.youtube.com/embed/waCflGIaPtU`
-3. El iframe mantendra el aspect ratio 16:9, bordes redondeados y estilos consistentes con el sitio
-4. Se incluiran atributos de seguridad y accesibilidad: `allow`, `allowFullScreen`, `title`, `loading="lazy"`
+**2. Modificar `src/pages/Contacto.tsx`**
+- Reemplazar `HubSpotFormPlaceholder` por el nuevo componente `HubSpotForm` con los valores reales:
 
-**Codigo resultante (seccion relevante):**
 ```tsx
-<div className="aspect-video mb-8 rounded-lg overflow-hidden">
-  <iframe
-    src="https://www.youtube.com/embed/waCflGIaPtU"
-    title="¿Qué es el Gas Natural? - ECOGAS"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowFullScreen
-    loading="lazy"
-    className="w-full h-full"
-  />
-</div>
+<HubSpotForm
+  portalId="49715152"
+  formId="1abea590-7764-4f4e-a53b-bfba4ab708b3"
+  region="na1"
+/>
 ```
 
-Este es el unico archivo que necesita cambios.
+**3. Actualizar `src/lib/constants.ts`**
+- Actualizar los valores placeholder de HubSpot con los datos reales del formulario de contacto
+
+### Archivos a modificar
+- **Nuevo:** `src/components/shared/HubSpotForm.tsx`
+- **Editar:** `src/pages/Contacto.tsx`
+- **Editar:** `src/lib/constants.ts`
+
