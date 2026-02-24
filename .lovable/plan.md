@@ -1,38 +1,51 @@
 
 
-## Plan: Crear pagina de Cobertura con mapa de Mexico
+## Plan: Mapa de Mexico con imagen real y pines de flama ECOGAS animados
 
-### Descripcion
-Crear una nueva pagina `/cobertura/` que muestre un mapa de Mexico en colores corporativos de ECOGAS (Azul Institucional #005F87, Azul Cian #0085AD, Verde Vivo #78BE20) con pines/marcadores en las 4 ciudades de cobertura: Chihuahua, Torreon/La Laguna, Victoria de Durango y Mexicali. Los enlaces de ciudades en la pagina de Contacto se redirigiran a esta nueva pagina.
+### Que se hara
 
-### Cambios a realizar
+Reemplazar el mapa SVG simplificado actual por la imagen real del mapa de Mexico que subiste, coloreada en Azul Cian. Los pines circulares se reemplazaran por la imagen de la flama ECOGAS con una animacion de parpadeo.
 
-**1. Crear `src/pages/cobertura/Cobertura.tsx`** - Nueva pagina con:
-- Breadcrumb de navegacion
-- Titulo "Nuestra Cobertura" con descripcion
-- Mapa SVG de Mexico dibujado con los colores corporativos (silueta del pais en Azul Institucional)
-- 4 pines animados (en Verde Vivo) ubicados en las coordenadas aproximadas de cada ciudad
-- Al pasar el cursor o hacer clic en un pin, se muestra el nombre de la ciudad
-- Tarjetas debajo del mapa con informacion de cada ciudad
-- Seccion CTA para contratar servicio
+### Cambios en `src/pages/cobertura/Cobertura.tsx`
 
-**2. Editar `src/App.tsx`** - Agregar la ruta:
-- Importar el nuevo componente `Cobertura`
-- Agregar ruta `/cobertura/` que renderice la pagina
+**1. Copiar las imagenes al proyecto:**
+- `Mapa_México.png` a `src/assets/mapa-mexico.png` (mapa base)
+- `FLAMA_ECOGAS-2.png` a `src/assets/flama-ecogas.png` (pin de flama)
 
-**3. Editar `src/pages/Contacto.tsx`** - Actualizar enlaces de ciudades:
-- Cambiar los `Link` de cada ciudad de `/cobertura/${city.slug}/` a `/cobertura/` para que todos apunten a la misma pagina del mapa
+**2. Reemplazar la seccion del mapa SVG completa:**
+- Eliminar todo el bloque `<svg>` con los paths simplificados de Mexico
+- Usar un contenedor `<div>` con `position: relative`
+- Colocar la imagen del mapa de Mexico como fondo/imagen principal con un filtro CSS para colorearla en **Azul Cian #0085AD** (usando una combinacion de `filter` y un overlay de color, o aplicando un `mix-blend-mode` con un div de fondo azul cian)
+- Sobre el mapa, posicionar 4 imagenes de la flama ECOGAS como pines absolutos en las coordenadas correspondientes a cada ciudad
+
+**3. Pines con flama ECOGAS animados:**
+- Cada pin sera un `<img>` de la flama posicionado con `position: absolute` usando porcentajes relativos al mapa
+- Animacion CSS de parpadeo (blink/pulse): la flama alterna entre opacidad completa y reducida, creando un efecto de "parpadeando"
+- Etiqueta de texto debajo de cada pin con el nombre de la ciudad y estado
+- Coordenadas aproximadas (en porcentaje del contenedor):
+  - Mexicali, Baja California: ~12%, ~12%
+  - Chihuahua Capital: ~32%, ~22%
+  - Torreon / La Laguna: ~40%, ~38%
+  - Victoria de Durango: ~34%, ~42%
+
+**4. Mantener sin cambios:**
+- Breadcrumb, titulo, descripcion
+- Tarjetas de ciudades debajo del mapa
+- Seccion CTA inferior
 
 ### Detalle tecnico
 
-- El mapa de Mexico sera un componente SVG inline con la silueta del pais, usando `fill` con el color Azul Institucional (`#005F87`) y borde en Azul Cian (`#0085AD`)
-- Los pines seran circulos SVG con efecto de pulso (animacion CSS) en Verde Vivo (`#78BE20`), posicionados en coordenadas relativas al SVG del mapa
-- Coordenadas aproximadas de las ciudades dentro del SVG:
-  - Mexicali: noroeste (Baja California)
-  - Chihuahua: norte-centro
-  - Torreon/La Laguna: centro-norte (Coahuila/Durango)
-  - Victoria de Durango: centro-oeste
-- Se usara un `path` SVG simplificado pero reconocible de Mexico
-- Tooltips nativos con `title` o componentes Tooltip de Radix para los nombres de ciudades
-- Responsive: el mapa se ajustara al ancho del contenedor
+**Colorear el mapa en Azul Cian:**
+El mapa PNG es una silueta con contornos negros sobre fondo blanco. Se aplicara un enfoque de overlay: el mapa se coloca como imagen con `mix-blend-mode: multiply` sobre un fondo `#0085AD`, o se usa un filtro CSS (`brightness(0) saturate(100%)` + `invert` + `sepia` + `hue-rotate`) para teñirlo en azul cian.
+
+**Animacion de parpadeo de los pines:**
+```css
+@keyframes flame-blink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.9); }
+}
+```
+Cada pin tendra un `animation-delay` diferente para que no parpadeen todos al mismo tiempo.
+
+**Tamano de los pines:** Aproximadamente 30-40px de alto, responsive con unidades relativas.
 
