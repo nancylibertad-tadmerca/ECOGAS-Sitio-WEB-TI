@@ -99,7 +99,7 @@ const Contacto = () => {
               {SITE_CONFIG.cities.map((city) => (
                 <Link 
                   key={city.slug}
-                  to={`/cobertura/${city.slug}/`}
+                  to="/cobertura/"
                   className="flex items-center gap-4 p-4 rounded-lg border hover:bg-muted transition-colors"
                 >
                   <MapPin className="h-5 w-5 text-primary" />

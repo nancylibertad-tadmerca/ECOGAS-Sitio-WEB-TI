@@ -39,6 +39,9 @@ import ComoContratar from "./pages/contratar/ComoContratar";
 import AvisoPrivacidad from "./pages/legal/AvisoPrivacidad";
 import TerminosCondiciones from "./pages/legal/TerminosCondiciones";
 
+// Cobertura
+import Cobertura from "./pages/cobertura/Cobertura";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -79,6 +82,9 @@ const App = () => (
           
           {/* Contratar */}
           <Route path="/contratar/como-contratar/" element={<ComoContratar />} />
+          
+          {/* Cobertura */}
+          <Route path="/cobertura/" element={<Cobertura />} />
           
           {/* Legal */}
           <Route path="/aviso-de-privacidad/" element={<AvisoPrivacidad />} />
