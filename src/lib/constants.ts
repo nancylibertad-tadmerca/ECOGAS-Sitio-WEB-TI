@@ -18,7 +18,7 @@ export const SITE_CONFIG = {
   // External Portal URLs (Placeholders - replace with actual URLs)
   portals: {
     pagoEnLinea: "https://portal-pago.ecogas.com.mx", // Placeholder
-    consultaRecibo: "https://portal-recibo.ecogas.com.mx", // Placeholder
+    consultaRecibo: "https://clientes.ecogas.com.mx/react/master/#INDEX",
   },
   
   // HubSpot Form IDs (Placeholders - replace with actual IDs)

@@ -51,7 +51,7 @@ const Recibo = () => {
             </p>
             <Button asChild size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
               <a href={SITE_CONFIG.portals.consultaRecibo} target="_blank" rel="noopener noreferrer">
-                Consultar Recibo
+                Portal Autoservicio
               </a>
             </Button>
           </div>
@@ -76,20 +76,20 @@ const Recibo = () => {
 
           {/* Features */}
           <div className="grid md:grid-cols-2 gap-6 mb-12">
-            <div className="p-6 bg-muted rounded-lg text-left">
+            <a href={SITE_CONFIG.portals.consultaRecibo} target="_blank" rel="noopener noreferrer" className="p-6 bg-muted rounded-lg text-left block hover:bg-muted/80 transition-colors">
               <Search className="h-8 w-8 text-primary mb-3" />
               <h3 className="font-semibold mb-2">Historial de Consumo</h3>
               <p className="text-sm text-muted-foreground">
                 Revisa tu consumo de meses anteriores y compara tu uso.
               </p>
-            </div>
-            <div className="p-6 bg-muted rounded-lg text-left">
+            </a>
+            <a href={SITE_CONFIG.portals.consultaRecibo} target="_blank" rel="noopener noreferrer" className="p-6 bg-muted rounded-lg text-left block hover:bg-muted/80 transition-colors">
               <Download className="h-8 w-8 text-primary mb-3" />
               <h3 className="font-semibold mb-2">Descarga PDF</h3>
               <p className="text-sm text-muted-foreground">
                 Guarda o imprime tu recibo en formato digital.
               </p>
-            </div>
+            </a>
           </div>
 
           {/* Support */}
