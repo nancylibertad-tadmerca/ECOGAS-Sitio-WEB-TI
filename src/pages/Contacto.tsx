@@ -50,7 +50,7 @@ const Contacto = () => {
             </CardHeader>
             <CardContent className="space-y-2 text-sm">
               <p className="text-primary bg-primary-foreground text-sm">{SITE_CONFIG.hours.weekdays}</p>
-              <p>{SITE_CONFIG.hours.weekends}</p>
+              <p className="text-primary">{SITE_CONFIG.hours.weekends}</p>
             </CardContent>
           </Card>
 
