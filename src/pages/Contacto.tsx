@@ -33,10 +33,10 @@ const Contacto = () => {
               <CardTitle>Teléfono</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
-              <a 
-                href={SITE_CONFIG.phoneLink} 
-                className="text-2xl font-bold text-primary hover:underline block"
-              >
+              <a
+                href={SITE_CONFIG.phoneLink}
+                className="text-2xl font-bold text-primary hover:underline block">
+
                 {SITE_CONFIG.phone}
               </a>
               <p className="text-sm text-muted-foreground">Línea gratuita</p>
@@ -60,10 +60,10 @@ const Contacto = () => {
               <CardTitle>Correo Electrónico</CardTitle>
             </CardHeader>
             <CardContent>
-              <a 
-                href={`mailto:${SITE_CONFIG.email}`} 
-                className="text-primary hover:underline"
-              >
+              <a
+                href={`mailto:${SITE_CONFIG.email}`}
+                className="text-primary hover:underline">
+
                 {SITE_CONFIG.email}
               </a>
             </CardContent>
@@ -71,12 +71,12 @@ const Contacto = () => {
         </div>
 
         {/* WhatsApp CTA */}
-        <div className="bg-[#25D366] text-white rounded-lg p-8 mb-12 text-center">
+        <div className="text-white rounded-lg p-8 mb-12 text-center bg-[#78c021]">
           <MessageCircle className="h-12 w-12 mx-auto mb-4" />
           <h2 className="text-2xl font-bold mb-2">Contáctanos por WhatsApp</h2>
           <p className="mb-4 opacity-90">Respuesta rápida a tus consultas</p>
           <Button asChild size="lg" variant="secondary" className="bg-white text-[#25D366] hover:bg-white/90">
-            <a href={SITE_CONFIG.whatsappLink} target="_blank" rel="noopener noreferrer">
+            <a href={SITE_CONFIG.whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-secondary text-secondary-foreground border-secondary">
               Enviar mensaje
             </a>
           </Button>
@@ -86,26 +86,26 @@ const Contacto = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
             <h2 className="text-2xl font-bold mb-6">Envíanos un mensaje</h2>
-            <HubSpotForm 
+            <HubSpotForm
               portalId={SITE_CONFIG.hubspot.portalId}
               formId={SITE_CONFIG.hubspot.forms.contacto}
-              region={SITE_CONFIG.hubspot.region}
-            />
+              region={SITE_CONFIG.hubspot.region} />
+
           </div>
 
           <div>
             <h2 className="text-2xl font-bold mb-6">Nuestras Ciudades</h2>
             <div className="space-y-4">
-              {SITE_CONFIG.cities.map((city) => (
-                <Link 
-                  key={city.slug}
-                  to="/cobertura/"
-                  className="flex items-center gap-4 p-4 rounded-lg border hover:bg-muted transition-colors"
-                >
+              {SITE_CONFIG.cities.map((city) =>
+              <Link
+                key={city.slug}
+                to="/cobertura/"
+                className="flex items-center gap-4 p-4 rounded-lg border hover:bg-muted transition-colors">
+
                   <MapPin className="h-5 w-5 text-primary" />
                   <span className="font-medium">{city.name}</span>
                 </Link>
-              ))}
+              )}
             </div>
 
             <div className="mt-8 p-6 bg-muted rounded-lg">
@@ -120,8 +120,8 @@ const Contacto = () => {
           </div>
         </div>
       </div>
-    </Layout>
-  );
+    </Layout>);
+
 };
 
 export default Contacto;
