@@ -10,17 +10,17 @@ const Recibo = () => {
   {
     numero: 1,
     titulo: "Ingresa al portal",
-    descripcion: "Haz clic en el botón \"Da clic para ir al portal\" para acceder."
+    descripcion: "Haz clic en el botón 'Consultar Recibo' para acceder al portal."
   },
   {
     numero: 2,
     titulo: "Ingresa tu número de cliente",
-    descripcion: "Escribe tu número de cliente que aparece en tu factura anterior."
+    descripcion: "Escribe tu número de cliente que aparece en tu recibo anterior."
   },
   {
     numero: 3,
     titulo: "Consulta y descarga",
-    descripcion: "Visualiza tu factura actual y descárgala en formato PDF."
+    descripcion: "Visualiza tu recibo actual y descárgalo en formato PDF."
   }];
 
 
@@ -87,7 +87,7 @@ const Recibo = () => {
               <Download className="h-8 w-8 text-primary mb-3" />
               <h3 className="font-semibold mb-2">Descarga PDF</h3>
               <p className="text-sm text-muted-foreground">
-                Guarda o imprime tu recibo en formato digital.
+                Guarda o imprime tu factura en formato digital.
               </p>
             </div>
           </div>
