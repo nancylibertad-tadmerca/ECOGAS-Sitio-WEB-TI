@@ -1,21 +1,20 @@
 
 
-## Plan: Actualizar pagina Consultar Recibo con URL real y enlaces en tarjetas
+## Plan: Integrar formulario real de HubSpot en la pagina Como Contratar
 
-### Cambios en `src/pages/clientes/Recibo.tsx`
+### Cambios en `src/pages/contratar/ComoContratar.tsx`
 
-1. **Boton principal "Consultar Recibo"** (linea 53-55): Cambiar el texto a **"Portal Autoservicio"** y la URL a `https://clientes.ecogas.com.mx/react/master/#INDEX`
-
-2. **Tarjeta "Historial de Consumo"** (lineas 79-85): Convertir el `div` en un enlace `<a>` que apunte a la misma URL, manteniendo el estilo visual
-
-3. **Tarjeta "Descarga PDF"** (lineas 86-92): Convertir el `div` en un enlace `<a>` que apunte a la misma URL, manteniendo el estilo visual
+1. Reemplazar la importacion de `HubSpotFormPlaceholder` por `HubSpotForm`
+2. Sustituir el componente placeholder por el formulario real con estos datos:
+   - **Portal ID:** 49715152
+   - **Form ID:** aa3bdd32-9678-453f-9de8-c2f065983720
+   - **Region:** na1
 
 ### Cambio en `src/lib/constants.ts`
 
-4. Actualizar el valor de `portals.consultaRecibo` con la URL real: `https://clientes.ecogas.com.mx/react/master/#INDEX`
+3. Actualizar el valor de `hubspot.forms.quieroContratar` con el Form ID real: `aa3bdd32-9678-453f-9de8-c2f065983720`
 
-### Resultado
-- El boton principal dira "Portal Autoservicio" y abrira el portal real en nueva pestana
-- Las dos tarjetas inferiores seran clicables y tambien llevaran al portal real
-- La URL quedara centralizada en constants.ts para facilitar futuros cambios
+### Archivos a modificar
+- **Editar:** `src/pages/contratar/ComoContratar.tsx`
+- **Editar:** `src/lib/constants.ts`
 
