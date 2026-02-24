@@ -94,8 +94,8 @@ const Recibo = () => {
 
           {/* Support */}
           <div className="bg-muted rounded-lg p-6">
-            <p className="text-muted-foreground mb-4">
-              ¿No encuentras tu recibo o necesitas ayuda?
+            <p className="text-muted-foreground mb-4">¿No encuentras tu factura o necesitas ayuda?
+
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild variant="outline">
