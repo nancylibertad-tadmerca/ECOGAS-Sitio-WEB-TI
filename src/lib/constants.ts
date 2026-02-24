@@ -23,9 +23,10 @@ export const SITE_CONFIG = {
   
   // HubSpot Form IDs (Placeholders - replace with actual IDs)
   hubspot: {
-    portalId: "HUBSPOT_PORTAL_ID", // Replace with actual Portal ID
+    portalId: "49715152",
+    region: "na1",
     forms: {
-      contacto: "HUBSPOT_FORM_CONTACTO", // Replace with actual Form ID
+      contacto: "1abea590-7764-4f4e-a53b-bfba4ab708b3",
       quieroContratar: "HUBSPOT_FORM_CONTRATAR", // Replace with actual Form ID
     },
   },
