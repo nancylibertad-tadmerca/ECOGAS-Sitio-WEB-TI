@@ -73,8 +73,8 @@ export const NAV_LINKS = [
     label: "Soy Cliente",
     children: [
       { label: "Formas de Pago", href: "/clientes/formas-de-pago/" },
-      { label: "Pago en Línea", href: "https://clientes.ecogas.com.mx/react/master/#INDEX", external: true },
-      { label: "Consultar tu factura", href: "https://clientes.ecogas.com.mx/react/master/#INDEX", external: true },
+      { label: "Pago en Línea", href: "/clientes/pago-en-linea/" },
+      { label: "Consultar tu factura", href: "/clientes/recibo/" },
       { label: "Tips de Ahorro", href: "/blog/ahorro/tips-ahorrar-gas-natural/" },
     ],
   },

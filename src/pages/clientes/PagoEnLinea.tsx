@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CreditCard, Shield, Clock, Phone, HelpCircle } from "lucide-react";
+import { CreditCard, Shield, Clock, Phone, HelpCircle, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Layout from "@/components/layout/Layout";
@@ -98,7 +98,7 @@ const PagoEnLinea = () => {
           </div>
 
           {/* Alternative */}
-          <div className="bg-muted rounded-lg p-6">
+          <div className="bg-muted rounded-lg p-6 mb-6">
             <p className="text-muted-foreground mb-4">
               ¿Prefieres pagar por teléfono o necesitas ayuda?
             </p>
@@ -109,6 +109,14 @@ const PagoEnLinea = () => {
               </a>
             </Button>
           </div>
+
+          {/* Return button */}
+          <Button asChild variant="ghost" className="w-full">
+            <Link to="/clientes/formas-de-pago/">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Regresar al sitio ECOGAS
+            </Link>
+          </Button>
         </div>
       </div>
     </Layout>

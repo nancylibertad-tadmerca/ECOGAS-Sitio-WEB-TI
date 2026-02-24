@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FileText, Search, Download, Phone, ArrowRight } from "lucide-react";
+import { FileText, Search, Download, Phone, ArrowRight, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import PageBreadcrumb from "@/components/shared/PageBreadcrumb";
@@ -93,10 +93,8 @@ const Recibo = () => {
           </div>
 
           {/* Support */}
-          <div className="bg-muted rounded-lg p-6">
-            <p className="text-muted-foreground mb-4">¿No encuentras tu factura o necesitas ayuda?
-
-            </p>
+          <div className="bg-muted rounded-lg p-6 mb-6">
+            <p className="text-muted-foreground mb-4">¿No encuentras tu factura o necesitas ayuda?</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild variant="outline">
                 <a href={SITE_CONFIG.phoneLink}>
@@ -109,6 +107,14 @@ const Recibo = () => {
               </Button>
             </div>
           </div>
+
+          {/* Return button */}
+          <Button asChild variant="ghost" className="w-full">
+            <Link to="/clientes/formas-de-pago/">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Regresar al sitio ECOGAS
+            </Link>
+          </Button>
         </div>
       </div>
     </Layout>);
