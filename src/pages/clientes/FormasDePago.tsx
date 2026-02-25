@@ -103,7 +103,7 @@ const FormasDePago = () => {
             </Button>
             <Button asChild variant="outline">
               <a href={SITE_CONFIG.portals.consultaRecibo} target="_blank" rel="noopener noreferrer">
-                Consultar Recibo
+                Consultar Factura
                 <ExternalLink className="ml-2 h-4 w-4" />
               </a>
             </Button>
