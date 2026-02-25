@@ -78,18 +78,19 @@ const Recibo = () => {
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             <div className="p-6 bg-muted rounded-lg text-left">
               <Search className="h-8 w-8 text-primary mb-3" />
-              <h3 className="font-semibold mb-2">Historial de Consumo</h3>
+              <h3 className="font-semibold mb-2">Más práctico y seguro pagar por el portal de autoservicio.
+              </h3>
               <p className="text-sm text-muted-foreground">
-                Revisa tu consumo de meses anteriores y compara tu uso.
+
               </p>
             </div>
-            <div className="p-6 bg-muted rounded-lg text-left">
+            <Phone className="p-6 bg-muted rounded-lg text-left">
               <Download className="h-8 w-8 text-primary mb-3" />
               <h3 className="font-semibold mb-2">Descarga PDF</h3>
               <p className="text-sm text-muted-foreground">
                 Guarda o imprime tu factura en formato digital.
               </p>
-            </div>
+            </Phone>
           </div>
 
           {/* Support */}
@@ -118,7 +119,6 @@ const Recibo = () => {
         </div>
       </div>
     </Layout>);
-
 };
 
 export default Recibo;
