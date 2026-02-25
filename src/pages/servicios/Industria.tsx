@@ -96,7 +96,7 @@ const Industria = () => {
               </Link>
             </Button>
             <Button asChild variant="outline">
-              <Link to="/cobertura/chihuahua/">Ver Cobertura</Link>
+              <Link to="/cobertura/">Ver Cobertura</Link>
             </Button>
           </div>
         </div>
