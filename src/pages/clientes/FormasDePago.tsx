@@ -32,7 +32,7 @@ const FormasDePago = () => {
       icon: CreditCard,
       title: "Centros de Atención",
       description: "Visita nuestros centros de atención al cliente.",
-      note: "Consulta ubicaciones en:\nChihuahua. Calle Colegio 6300\nTorreón. Prolongación Mónaco No. 100\nBlvr. Venustiano Carranza 200"
+      note: "Consulta ubicaciones en:\nChihuahua. Calle Colegio 6300\nTorreón. Prolongación Mónaco No. 100\nMexicali. Blvr. Venustiano Carranza 200"
     },
   ];
 
