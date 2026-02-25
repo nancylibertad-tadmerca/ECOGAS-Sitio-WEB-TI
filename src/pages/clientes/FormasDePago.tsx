@@ -32,7 +32,7 @@ const FormasDePago = () => {
       icon: CreditCard,
       title: "Centros de Atención",
       description: "Visita nuestros centros de atención al cliente.",
-      note: "Consulta ubicaciones en tu ciudad"
+      note: "Consulta ubicaciones en:\nChihuahua. Calle Colegio 6300\nTorreón. Prolongación Mónaco No. 100\nBlvr. Venustiano Carranza 200"
     },
   ];
 
@@ -79,7 +79,7 @@ const FormasDePago = () => {
                     <p className="text-sm">{metodo.stores.join(" • ")}</p>
                   )}
                   {metodo.note && (
-                    <p className="text-sm text-muted-foreground">{metodo.note}</p>
+                    <p className="text-sm text-muted-foreground whitespace-pre-line">{metodo.note}</p>
                   )}
                   {metodo.link && (
                     <Button asChild variant="link" className="p-0 h-auto mt-2">
