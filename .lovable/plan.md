@@ -1,19 +1,29 @@
 
 
-## Plan: Agregar mapa de Google Maps a la tarjeta de Torreon / La Laguna
+## Plan: Mostrar imagen informativa al dar clic en la tarjeta de Durango
 
 ### Que se hara
 
-Agregar la URL del iframe de Google Maps proporcionada a la tarjeta de **Torreon / La Laguna** en la pagina de Cobertura, usando el mismo patron que ya funciona para Mexicali y Chihuahua: al dar clic en la tarjeta se abre un modal con el mapa embebido.
+Al dar clic en la tarjeta de **Victoria de Durango**, se abrira un modal (Dialog) mostrando la imagen proporcionada con informacion de formas de pago en Durango.
 
 ### Detalle tecnico
 
-**Archivo a editar:** `src/pages/cobertura/Cobertura.tsx` (linea 15)
+**1. Copiar la imagen al proyecto**
+- Copiar `user-uploads://image.png` a `src/assets/durango-info.png`
 
-- Agregar la propiedad `mapEmbed` a la entrada de Torreon / La Laguna en el array `cities`:
-  ```
-  mapEmbed: "https://www.google.com/maps/d/embed?mid=1YaumPO09mcZQ__g4ZF3k8rMenf0&ehbc=2E312F"
-  ```
+**2. Editar `src/pages/cobertura/Cobertura.tsx`**
 
-No se requiere ningun otro cambio. La logica de clic, el modal Dialog y el iframe ya estan implementados y funcionaran automaticamente.
+- Agregar una nueva propiedad opcional `infoImage` al tipo de ciudades (actualmente es un tipo implicito)
+- En la entrada de "Victoria de Durango", agregar `infoImage` apuntando a la imagen importada
+- Hacer la tarjeta de Durango clickeable (igual que las demas)
+- En el Dialog, mostrar la imagen cuando la ciudad seleccionada tenga `infoImage` en lugar de un iframe
+
+Cambios concretos:
+- Importar la imagen: `import durangoInfoImg from "@/assets/durango-info.png";`
+- Agregar al objeto de Durango: `infoImage: durangoInfoImg`
+- Actualizar la logica del `onClick` de las tarjetas para que tambien funcione cuando haya `infoImage`
+- En el Dialog, renderizar condicionalmente: si hay `mapEmbed` mostrar iframe, si hay `infoImage` mostrar `<img>`
+- Actualizar el texto "Ver mapa" para que aparezca tambien en Durango
+
+No se crean archivos nuevos ni se modifican otros componentes.
 
