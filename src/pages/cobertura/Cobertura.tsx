@@ -8,12 +8,13 @@ import Layout from "@/components/layout/Layout";
 import PageBreadcrumb from "@/components/shared/PageBreadcrumb";
 import { SITE_CONFIG } from "@/lib/constants";
 import mapaImg from "@/assets/mapa-mexico.png";
+import durangoInfoImg from "@/assets/durango-info.png";
 
 const cities = [
   { name: "Mexicali", state: "Mexicali", x: 12, y: 12, mapEmbed: "https://www.google.com/maps/d/embed?mid=1iiZmgyP3R0ZEu6t2qJJ1t2gRgVY&ehbc=2E312F" },
   { name: "Chihuahua", state: "Chihuahua", x: 32, y: 22, mapEmbed: "https://www.google.com/maps/d/embed?mid=10fep7Se2Bcx4N7vh1DHAjlGO47U&ehbc=2E312F" },
   { name: "Torreón / La Laguna", state: "Torreón / Laguna", x: 40, y: 38, mapEmbed: "https://www.google.com/maps/d/embed?mid=1YaumPO09mcZQ__g4ZF3k8rMenf0&ehbc=2E312F" },
-  { name: "Victoria de Durango", state: "Durango", x: 34, y: 42 },
+  { name: "Victoria de Durango", state: "Durango", x: 34, y: 42, infoImage: durangoInfoImg },
 ];
 
 const Cobertura = () => {
@@ -49,8 +50,8 @@ const Cobertura = () => {
           {cities.map((city) => (
             <Card
               key={city.name}
-              className={`text-center hover:shadow-lg transition-shadow ${city.mapEmbed ? "cursor-pointer ring-accent/30 hover:ring-2" : ""}`}
-              onClick={() => city.mapEmbed && setSelectedCity(city)}
+              className={`text-center hover:shadow-lg transition-shadow ${(city.mapEmbed || city.infoImage) ? "cursor-pointer ring-accent/30 hover:ring-2" : ""}`}
+              onClick={() => (city.mapEmbed || city.infoImage) && setSelectedCity(city)}
             >
               <CardContent className="pt-6">
                 <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-3">
@@ -58,7 +59,7 @@ const Cobertura = () => {
                 </div>
                 <h3 className="font-bold text-lg mb-1">{city.name}</h3>
                 <p className="text-sm text-muted-foreground">{city.state}</p>
-                {city.mapEmbed && (
+                {(city.mapEmbed || city.infoImage) && (
                   <p className="text-xs text-accent mt-2 flex items-center justify-center gap-1">
                     <Map className="h-3 w-3" /> Ver mapa
                   </p>
@@ -74,14 +75,16 @@ const Cobertura = () => {
             <DialogHeader>
               <DialogTitle>Cobertura en {selectedCity?.name}</DialogTitle>
             </DialogHeader>
-            {selectedCity?.mapEmbed && (
+            {selectedCity?.mapEmbed ? (
               <iframe
                 src={selectedCity.mapEmbed}
                 className="w-full h-[400px] md:h-[480px] rounded border-0"
                 allowFullScreen
                 loading="lazy"
               />
-            )}
+            ) : selectedCity?.infoImage ? (
+              <img src={selectedCity.infoImage} alt={`Información de ${selectedCity.name}`} className="w-full h-auto rounded" />
+            ) : null}
           </DialogContent>
         </Dialog>
 
