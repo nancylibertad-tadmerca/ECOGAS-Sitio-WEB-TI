@@ -84,13 +84,13 @@ const Recibo = () => {
 
 
 
-            <Phone className="p-6 bg-muted rounded-lg text-left">
-              <Download className="h-8 w-8 text-primary mb-3" />
-              <h3 className="font-semibold mb-2">Descarga PDF</h3>
-              <p className="text-sm text-muted-foreground">
-                Guarda o imprime tu factura en formato digital.
-              </p>
-            </Phone>
+            
+
+
+
+
+
+
           </div>
 
           {/* Support */}
