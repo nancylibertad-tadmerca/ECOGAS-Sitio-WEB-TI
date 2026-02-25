@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FileText, Search, Download, Phone, ArrowRight, ArrowLeft } from "lucide-react";
+import { FileText, Download, Phone, ArrowRight, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import PageBreadcrumb from "@/components/shared/PageBreadcrumb";
@@ -77,7 +77,7 @@ const Recibo = () => {
           {/* Features */}
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             <div className="p-6 bg-muted rounded-lg text-left">
-              <Search className="h-8 w-8 text-primary mb-3" />
+              
               <h3 className="font-semibold mb-2">Más práctico y seguro pagar por el portal de autoservicio.
               </h3>
               <p className="text-sm text-muted-foreground">
