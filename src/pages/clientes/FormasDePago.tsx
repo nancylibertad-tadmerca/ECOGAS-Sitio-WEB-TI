@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import bancosPagoImg from "@/assets/bancos-pago.png";
 import { CreditCard, Building, Store, Smartphone, ArrowRight, AlertCircle, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -19,7 +20,7 @@ const FormasDePago = () => {
       icon: Building,
       title: "Bancos",
       description: "Realiza tu pago en ventanilla de cualquier banco participante.",
-      banks: ["Banamex", "Bancomer", "Santander", "Banorte", "HSBC"]
+      bankImage: bancosPagoImg
     },
     {
       icon: Store,
@@ -71,8 +72,8 @@ const FormasDePago = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-3">{metodo.description}</p>
-                  {metodo.banks && (
-                    <p className="text-sm">{metodo.banks.join(" • ")}</p>
+                  {metodo.bankImage && (
+                    <img src={metodo.bankImage} alt="Logos de bancos participantes" className="mt-2 w-full h-auto rounded" />
                   )}
                   {metodo.stores && (
                     <p className="text-sm">{metodo.stores.join(" • ")}</p>
