@@ -1,29 +1,23 @@
 
 
-## Plan: Mostrar imagen informativa al dar clic en la tarjeta de Durango
+## Plan: Corregir enlace "Ver Cobertura" en la pagina de Industria
 
-### Que se hara
+### Cambio
 
-Al dar clic en la tarjeta de **Victoria de Durango**, se abrira un modal (Dialog) mostrando la imagen proporcionada con informacion de formas de pago en Durango.
+En el archivo `src/pages/servicios/Industria.tsx`, actualizar el enlace del boton "Ver Cobertura" de `/cobertura/chihuahua/` a `/cobertura/` para que dirija correctamente a la pagina centralizada de Cobertura.
 
 ### Detalle tecnico
 
-**1. Copiar la imagen al proyecto**
-- Copiar `user-uploads://image.png` a `src/assets/durango-info.png`
+**Archivo:** `src/pages/servicios/Industria.tsx` (linea 91)
 
-**2. Editar `src/pages/cobertura/Cobertura.tsx`**
+Cambiar:
+```tsx
+<Link to="/cobertura/chihuahua/">Ver Cobertura</Link>
+```
+Por:
+```tsx
+<Link to="/cobertura/">Ver Cobertura</Link>
+```
 
-- Agregar una nueva propiedad opcional `infoImage` al tipo de ciudades (actualmente es un tipo implicito)
-- En la entrada de "Victoria de Durango", agregar `infoImage` apuntando a la imagen importada
-- Hacer la tarjeta de Durango clickeable (igual que las demas)
-- En el Dialog, mostrar la imagen cuando la ciudad seleccionada tenga `infoImage` en lugar de un iframe
-
-Cambios concretos:
-- Importar la imagen: `import durangoInfoImg from "@/assets/durango-info.png";`
-- Agregar al objeto de Durango: `infoImage: durangoInfoImg`
-- Actualizar la logica del `onClick` de las tarjetas para que tambien funcione cuando haya `infoImage`
-- En el Dialog, renderizar condicionalmente: si hay `mapEmbed` mostrar iframe, si hay `infoImage` mostrar `<img>`
-- Actualizar el texto "Ver mapa" para que aparezca tambien en Durango
-
-No se crean archivos nuevos ni se modifican otros componentes.
+Un solo cambio de una linea.
 
