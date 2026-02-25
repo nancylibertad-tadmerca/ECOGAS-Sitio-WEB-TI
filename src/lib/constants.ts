@@ -11,7 +11,7 @@ export const SITE_CONFIG = {
   
   // Business Hours
   hours: {
-    weekdays: "Atención Digital\nLunes a Viernes: 8:00 - 18:00",
+    weekdays: "Atención Digital\nLunes a Viernes: 8:00 - 17:00",
     weekends: "Sábado: 9:00 - 14:00",
   },
   
