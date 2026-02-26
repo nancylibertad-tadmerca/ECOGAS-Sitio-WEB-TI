@@ -28,6 +28,7 @@ import ServiciosIndustria from "./pages/servicios/Industria";
 import FormasDePago from "./pages/clientes/FormasDePago";
 import PagoEnLinea from "./pages/clientes/PagoEnLinea";
 import Recibo from "./pages/clientes/Recibo";
+import LlamaAntesDeExcavar from "./pages/clientes/LlamaAntesDeExcavar";
 
 // Blog
 import TipsAhorro from "./pages/blog/TipsAhorro";
@@ -76,6 +77,7 @@ const App = () => (
           <Route path="/clientes/formas-de-pago/" element={<FormasDePago />} />
           <Route path="/clientes/pago-en-linea/" element={<PagoEnLinea />} />
           <Route path="/clientes/recibo/" element={<Recibo />} />
+          <Route path="/clientes/llama-antes-de-excavar/" element={<LlamaAntesDeExcavar />} />
           
           {/* Blog */}
           <Route path="/blog/ahorro/tips-ahorrar-gas-natural/" element={<TipsAhorro />} />
