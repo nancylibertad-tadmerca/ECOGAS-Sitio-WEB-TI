@@ -1,15 +1,25 @@
-## Plan: Tooltip con direccion en tarjeta de Chihuahua
 
-### Que se hara
 
-Al posicionar el mouse sobre la tarjeta de **Chihuahua** en la pagina de Cobertura, aparecera un tooltip mostrando la direccion: **Calle Colegio 6300, Chihuahua, Chih y embeber a google maps: <iframe src="[https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d875.4641886962296!2d-106.12466672397125!3d28.634054994557236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDM4JzAyLjYiTiAxMDbCsDA3JzI0LjQiVw!5e0!3m2!1ses-419!2smx!4v1771978669318!5m2!1ses-419!2smx](https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d875.4641886962296!2d-106.12466672397125!3d28.634054994557236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDM4JzAyLjYiTiAxMDbCsDA3JzI0LjQiVw!5e0!3m2!1ses-419!2smx!4v1771978669318!5m2!1ses-419!2smx)" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>**
+## Agregar "Llama antes de excavar" en Soy Cliente
 
-### Detalle tecnico
+### Resumen
+Agregar una nueva opción "Llama antes de excavar" en el menú "Soy Cliente" que lleve a una página interna con la página de HubSpot embebida mediante iframe.
 
-**Archivo:** `src/pages/cobertura/Cobertura.tsx`
+### Cambios
 
-- Agregar una propiedad opcional `address` al array `cities`, con el valor `"Calle Colegio 6300, Chihuahua, Chih."` para Chihuahua
-- Importar `Tooltip`, `TooltipTrigger`, `TooltipContent` y `TooltipProvider` desde `@/components/ui/tooltip`
-- Envolver el grid de tarjetas con `TooltipProvider`
-- Para las tarjetas que tengan `address`, envolver la `Card` con `Tooltip` + `TooltipTrigger` + `TooltipContent` mostrando la direccion
-- Las tarjetas sin `address` se renderizan igual que antes
+1. **Actualizar navegación** (`src/lib/constants.ts`)
+   - Agregar `{ label: "Llama antes de excavar", href: "/clientes/llama-antes-de-excavar/" }` al array de children de "Soy Cliente"
+
+2. **Crear página** (`src/pages/clientes/LlamaAntesDeExcavar.tsx`)
+   - Usar el componente `Layout` existente
+   - Incluir `PageBreadcrumb` con la ruta correspondiente
+   - Embeber `https://info.ecogas.com.mx/llamaantesdeexcavar` en un iframe a pantalla completa dentro del contenedor principal
+
+3. **Agregar ruta** (`src/App.tsx`)
+   - Importar el nuevo componente
+   - Agregar `<Route path="/clientes/llama-antes-de-excavar/" element={<LlamaAntesDeExcavar />} />`
+
+### Detalles técnicos
+- El iframe tendrá altura mínima de ~80vh para una buena experiencia
+- Se seguirá el mismo patrón que las páginas de Pago en Línea y Consultar Factura (landing interna con header/footer del sitio)
+
