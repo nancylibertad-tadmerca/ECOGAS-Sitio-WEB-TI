@@ -76,6 +76,7 @@ export const NAV_LINKS = [
       { label: "Pago en Línea", href: "/clientes/pago-en-linea/" },
       { label: "Consultar tu factura", href: "/clientes/recibo/" },
       { label: "Tips de Ahorro", href: "/blog/ahorro/tips-ahorrar-gas-natural/" },
+      { label: "Llama antes de excavar", href: "/clientes/llama-antes-de-excavar/" },
     ],
   },
   { label: "Quiero Contratar", href: "/contratar/como-contratar/" },
