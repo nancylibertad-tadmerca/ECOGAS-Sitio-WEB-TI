@@ -34,7 +34,7 @@ const Header = () => {
           <img 
             src={logoColor} 
             alt="ECOGAS - El gas natural" 
-            className="h-10 w-auto"
+            className="h-14 w-auto"
           />
         </Link>
 
