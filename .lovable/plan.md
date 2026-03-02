@@ -1,48 +1,18 @@
 
 
-## Igualar el cuadro de "Horario de Atencion" con los demas
-
-### Problema actual
-La tarjeta central ("Horario de Atencion") tiene el fondo azul (`bg-primary`) en el header y fondo blanco invertido (`bg-primary-foreground`) en el contenido, lo que la hace verse diferente a las tarjetas de "Telefono" y "Correo Electronico".
+## Cambiar botón "Contacto" del header a WhatsApp Business
 
 ### Cambio
-En `src/pages/Contacto.tsx`, modificar la tarjeta central para que tenga el mismo estilo que las otras dos: fondo blanco con texto en azul primario.
 
-### Detalle tecnico
+En `src/components/layout/Header.tsx`, modificar los dos botones de "Contacto" (desktop y móvil) para que en lugar de navegar a `/contacto/`, abran el enlace de WhatsApp Business configurado en `SITE_CONFIG.whatsappLink`.
 
-Lineas 48-56, reemplazar:
+### Detalle técnico
 
-```text
-<Card className="text-center">
-  <CardHeader className="bg-primary px-0 py-0">
-    <Clock className="h-10 w-10 mx-auto text-primary mb-2" />
-    <CardTitle>Horario de Atención</CardTitle>
-  </CardHeader>
-  <CardContent className="space-y-2 text-sm">
-    <p className="text-primary bg-primary-foreground whitespace-pre-line text-2xl">...</p>
-    <p className="text-primary text-2xl">...</p>
-  </CardContent>
-</Card>
-```
+**Desktop (línea 89-91):** Cambiar `<Link to="/contacto/">` por `<a href={SITE_CONFIG.whatsappLink} target="_blank" rel="noopener noreferrer">` y actualizar el texto a "WhatsApp" o mantener "Contacto".
 
-Por:
+**Móvil (líneas 141-143):** Mismo cambio en el botón del menú móvil.
 
-```text
-<Card className="text-center">
-  <CardHeader>
-    <Clock className="h-10 w-10 mx-auto text-primary mb-2" />
-    <CardTitle>Horario de Atención</CardTitle>
-  </CardHeader>
-  <CardContent className="space-y-2">
-    <p className="text-primary whitespace-pre-line text-2xl">...</p>
-    <p className="text-primary text-2xl">...</p>
-  </CardContent>
-</Card>
-```
+Se necesita importar `SITE_CONFIG` (ya está importado) y reemplazar los `Link` por etiquetas `<a>` con el enlace de WhatsApp.
 
-Cambios puntuales:
-- Quitar `bg-primary px-0 py-0` del `CardHeader` para que use el padding y fondo por defecto (blanco).
-- Quitar `bg-primary-foreground` y `text-sm` del `CardContent` y el parrafo para igualar el estilo.
-
-Solo se modifica un archivo, una tarjeta.
+Archivos modificados: solo `src/components/layout/Header.tsx`.
 
