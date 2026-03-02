@@ -46,12 +46,12 @@ const Contacto = () => {
           </Card>
 
           <Card className="text-center">
-            <CardHeader className="bg-primary px-0 py-0">
+            <CardHeader>
               <Clock className="h-10 w-10 mx-auto text-primary mb-2" />
               <CardTitle>Horario de Atención</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-2 text-sm">
-              <p className="text-primary bg-primary-foreground whitespace-pre-line text-2xl">{SITE_CONFIG.hours.weekdays}</p>
+            <CardContent className="space-y-2">
+              <p className="text-primary whitespace-pre-line text-2xl">{SITE_CONFIG.hours.weekdays}</p>
               <p className="text-primary text-2xl">{SITE_CONFIG.hours.weekends}</p>
             </CardContent>
           </Card>
