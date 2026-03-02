@@ -66,15 +66,18 @@ const CarouselCylinder = memo(({ controls, cards }: CarouselCylinderProps) => {
             transformStyle: "preserve-3d",
           }}
           onDrag={(_, info) => {
-            rotation.set(rotation.get() + info.offset.x * 0.1)
+            rotation.set(rotation.get() + info.offset.x * 0.05)
           }}
           onDragEnd={(_, info) => {
+            const anglePerFace = 360 / faceCount
+            const raw = rotation.get() + info.velocity.x * 0.05
+            const snapped = Math.round(raw / anglePerFace) * anglePerFace
             controls.start({
-              rotateY: rotation.get() + info.velocity.x * 0.1,
+              rotateY: snapped,
               transition: {
                 type: "spring",
-                stiffness: 100,
-                damping: 20,
+                stiffness: 60,
+                damping: 30,
                 mass: 0.1,
               },
             })
@@ -93,10 +96,10 @@ const CarouselCylinder = memo(({ controls, cards }: CarouselCylinderProps) => {
               <Card className="mx-2 w-[240px] md:w-[300px] select-none cursor-grab active:cursor-grabbing">
                 <CardHeader>
                   <card.icon className="h-10 w-10 text-primary mb-2" />
-                  <CardTitle className="text-xl md:text-2xl">{card.title}</CardTitle>
+                  <CardTitle className="text-xl md:text-2xl text-black">{card.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground text-base">{card.description}</p>
+                  <p className="text-black/80 text-base">{card.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
