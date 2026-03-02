@@ -90,6 +90,7 @@ const ComoContratar = () => {
                 portalId={SITE_CONFIG.hubspot.portalId}
                 formId="1abea590-7764-4f4e-a53b-bfba4ab708b3"
                 region={SITE_CONFIG.hubspot.region}
+                redirectUrl="https://info.ecogas.com.mx/gracias-por-tus-datos"
               />
             </div>
 
