@@ -43,7 +43,7 @@ interface CarouselCylinderProps {
 
 const CarouselCylinder = memo(({ controls, cards }: CarouselCylinderProps) => {
   const isSmall = useMediaQuery("(max-width: 640px)")
-  const cylinderWidth = isSmall ? 600 : 1000
+  const cylinderWidth = isSmall ? 800 : 1400
   const faceCount = cards.length
   const faceWidth = cylinderWidth / faceCount
   const radius = cylinderWidth / (2 * Math.PI)
@@ -54,7 +54,7 @@ const CarouselCylinder = memo(({ controls, cards }: CarouselCylinderProps) => {
   )
 
   return (
-    <div className="flex h-[280px] items-center justify-center overflow-hidden md:h-[350px]">
+    <div className="flex h-[320px] items-center justify-center overflow-hidden md:h-[400px]">
       <div className="relative flex h-full w-full items-center justify-center" style={{ perspective: "1000px" }}>
         <motion.div
           drag="x"
@@ -66,15 +66,15 @@ const CarouselCylinder = memo(({ controls, cards }: CarouselCylinderProps) => {
             transformStyle: "preserve-3d",
           }}
           onDrag={(_, info) => {
-            rotation.set(rotation.get() + info.offset.x * 0.05)
+            rotation.set(rotation.get() + info.offset.x * 0.1)
           }}
           onDragEnd={(_, info) => {
             controls.start({
-              rotateY: rotation.get() + info.velocity.x * 0.05,
+              rotateY: rotation.get() + info.velocity.x * 0.1,
               transition: {
                 type: "spring",
                 stiffness: 100,
-                damping: 30,
+                damping: 20,
                 mass: 0.1,
               },
             })
@@ -90,13 +90,13 @@ const CarouselCylinder = memo(({ controls, cards }: CarouselCylinderProps) => {
                 transform: `rotateY(${i * (360 / faceCount)}deg) translateZ(${radius}px)`,
               }}
             >
-              <Card className="mx-2 w-[200px] md:w-[260px] select-none cursor-grab active:cursor-grabbing">
+              <Card className="mx-2 w-[240px] md:w-[300px] select-none cursor-grab active:cursor-grabbing">
                 <CardHeader>
-                  <card.icon className="h-8 w-8 text-primary mb-2" />
-                  <CardTitle className="text-lg">{card.title}</CardTitle>
+                  <card.icon className="h-10 w-10 text-primary mb-2" />
+                  <CardTitle className="text-xl md:text-2xl">{card.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground text-sm">{card.description}</p>
+                  <p className="text-muted-foreground text-base">{card.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
