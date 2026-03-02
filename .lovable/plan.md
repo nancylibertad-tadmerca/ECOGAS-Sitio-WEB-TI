@@ -1,23 +1,36 @@
 
+## Colocar foto de abuelita con nieta como fondo del carrusel 3D
 
-## Ajustar tamano, velocidad y texto del carrusel 3D
+### Cambio
+Copiar la imagen subida (`Receta_de_Siempre_9Jul25_01.jpg`) al proyecto y usarla como fondo estatico unicamente detras de la seccion del carrusel de beneficios. El carrusel 3D quedara superpuesto sobre la foto, con un overlay oscuro semitransparente para mantener la legibilidad de las tarjetas.
 
-### Archivo a modificar
-`src/components/ui/3d-carousel.tsx`
+### Detalle tecnico
 
-### Cambios
+**1. Copiar imagen**
+- Guardar `user-uploads://Receta_de_Siempre_9Jul25_01.jpg` como `src/assets/abuela-nieta-cocina.jpg`.
 
-**1. Tamano del carrusel mas grande**
-- Aumentar `cylinderWidth` de 600/1000 a 800/1400 (movil/desktop).
-- Aumentar altura del contenedor de `h-[280px] md:h-[350px]` a `h-[320px] md:h-[400px]`.
-- Aumentar ancho de las tarjetas de `w-[200px] md:w-[260px]` a `w-[240px] md:w-[300px]`.
+**2. Modificar `src/pages/servicios/Hogar.tsx`**
+- Importar la nueva imagen.
+- Envolver la seccion del carrusel (lineas 77-81: titulo "Beneficios para tu Familia" + `ThreeDCardCarousel`) en un contenedor con posicion relativa que se extienda fuera del contenedor principal (full-width).
+- Agregar la imagen como fondo con `bg-cover bg-center` y un overlay oscuro semitransparente (`bg-black/40`) para contraste con las tarjetas blancas.
+- El titulo "Beneficios para tu Familia" pasara a ser blanco para contrastar con el fondo oscuro.
 
-**2. Velocidad de arrastre mas responsiva**
-- Aumentar el multiplicador de drag de `0.05` a `0.1` (lineas 69 y 73) para que el giro responda mas rapido al movimiento del usuario.
-- Reducir `damping` del spring de 30 a 20 para que la inercia dure un poco mas al soltar.
+Estructura resultante de la seccion de beneficios:
 
-**3. Texto mas grande**
-- Icono: de `h-8 w-8` a `h-10 w-10`.
-- Titulo: de `text-lg` a `text-xl md:text-2xl`.
-- Descripcion: de `text-sm` a `text-base`.
+```text
+{/* Seccion de beneficios con fondo de imagen - sale del contenedor */}
+<div className="relative -mx-[calc(...)] px-[calc(...)] py-12 mb-12">
+  {/* Imagen de fondo */}
+  <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+       style={{ backgroundImage: `url(${abuelaNietaImg})` }} />
+  {/* Overlay oscuro para legibilidad */}
+  <div className="absolute inset-0 bg-black/50" />
+  {/* Contenido */}
+  <div className="relative z-10 max-w-4xl mx-auto">
+    <h2 className="text-2xl font-bold mb-6 text-white">Beneficios para tu Familia</h2>
+    <ThreeDCardCarousel cards={beneficios} />
+  </div>
+</div>
+```
 
+Solo se modifica `src/pages/servicios/Hogar.tsx` y se agrega un asset.
