@@ -1,18 +1,34 @@
-
-
-## Cambiar botón "Contacto" del header a WhatsApp Business
+## Insertar foto de equipo como fondo con degradado en Filosofia y Valores
 
 ### Cambio
 
-En `src/components/layout/Header.tsx`, modificar los dos botones de "Contacto" (desktop y móvil) para que en lugar de navegar a `/contacto/`, abran el enlace de WhatsApp Business configurado en `SITE_CONFIG.whatsappLink`.
+Copiar la imagen subida (`DSC08646.jpg`) a `src/assets/equipo-ecogas-oficina.jpg` y usarla como fondo de toda la seccion de contenido en la pagina de Filosofia y Valores, con un degradado blanco semitransparente detrás para garantizar la legibilidad del texto.
 
-### Detalle técnico
+### Detalle tecnico
 
-**Desktop (línea 89-91):** Cambiar `<Link to="/contacto/">` por `<a href={SITE_CONFIG.whatsappLink} target="_blank" rel="noopener noreferrer">` y actualizar el texto a "WhatsApp" o mantener "Contacto".
+**1. Copiar la imagen** al proyecto: `src/assets/equipo-ecogas-oficina.jpg`
 
-**Móvil (líneas 141-143):** Mismo cambio en el botón del menú móvil.
+**2. Modificar `src/pages/empresa/FilosofiaValores.tsx`:**
 
-Se necesita importar `SITE_CONFIG` (ya está importado) y reemplazar los `Link` por etiquetas `<a>` con el enlace de WhatsApp.
+- Importar la imagen: `import equipoOficina from "@/assets/equipo-ecogas-oficina.jpg";`
+- Envolver todo el contenido (lineas 37-85) en un contenedor con posicion relativa que tenga la imagen de fondo y un overlay con degradado blanco semitransparente.
 
-Archivos modificados: solo `src/components/layout/Header.tsx`.
+Estructura resultante:
 
+```text
+<div className="relative min-h-screen">
+  {/* Imagen de fondo fija */}
+  <div
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+    style={{ backgroundImage: `url(${equipoOficina})` }}
+  />
+  {/* Overlay degradado blanco para legibilidad */}
+  <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/85 to-white/95" />
+  {/* Contenido existente con z-index */}
+  <div className="relative z-10 container py-8 md:py-12">
+    ... contenido existente sin cambios ...
+  </div>
+</div>
+```
+
+El degradado `from-white/90 via-white/85 to-white/95` permite ver sutilmente la foto detras del contenido manteniendo la lectura clara. Se modifica un solo archivo y se agrega un asset.
