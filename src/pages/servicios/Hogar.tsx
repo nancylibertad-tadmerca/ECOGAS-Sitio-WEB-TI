@@ -7,6 +7,7 @@ import Layout from "@/components/layout/Layout";
 import PageBreadcrumb from "@/components/shared/PageBreadcrumb";
 import { SITE_CONFIG } from "@/lib/constants";
 import cocinaFamiliaImg from "@/assets/cocina-familia-hogar.jpg";
+import abuelaNietaImg from "@/assets/abuela-nieta-cocina.jpg";
 import { ThreeDCardCarousel } from "@/components/ui/3d-carousel";
 
 const Hogar = () => {
@@ -74,11 +75,19 @@ const Hogar = () => {
             calefacción y más.
           </p>
 
-          {/* Benefits */}
-          <h2 className="text-2xl font-bold mb-6">Beneficios para tu Familia</h2>
-          <div className="mb-12">
+        </div>
+
+        {/* Benefits with background image */}
+        <div className="relative -mx-[calc(50vw-50%)] px-[calc(50vw-50%)] py-12 mb-12 overflow-hidden">
+          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${abuelaNietaImg})` }} />
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="relative z-10 max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6 text-white">Beneficios para tu Familia</h2>
             <ThreeDCardCarousel cards={beneficios} />
           </div>
+        </div>
+
+        <div className="max-w-4xl mx-auto">
 
           {/* FAQs */}
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
