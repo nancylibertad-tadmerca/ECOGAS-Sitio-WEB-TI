@@ -1,25 +1,16 @@
 
 
-## Agregar "Llama antes de excavar" en Soy Cliente
+## Actualizar formulario HubSpot en "Cómo Contratar"
 
-### Resumen
-Agregar una nueva opción "Llama antes de excavar" en el menú "Soy Cliente" que lleve a una página interna con la página de HubSpot embebida mediante iframe.
+### Cambio
 
-### Cambios
+Modificar `src/pages/contratar/ComoContratar.tsx` para usar el nuevo Form ID `1abea590-7764-4f4e-a53b-bfba4ab708b3` en el componente `HubSpotForm` que aparece debajo de "Solicita una cita sin compromiso".
 
-1. **Actualizar navegación** (`src/lib/constants.ts`)
-   - Agregar `{ label: "Llama antes de excavar", href: "/clientes/llama-antes-de-excavar/" }` al array de children de "Soy Cliente"
+### Detalle tecnico
 
-2. **Crear página** (`src/pages/clientes/LlamaAntesDeExcavar.tsx`)
-   - Usar el componente `Layout` existente
-   - Incluir `PageBreadcrumb` con la ruta correspondiente
-   - Embeber `https://info.ecogas.com.mx/llamaantesdeexcavar` en un iframe a pantalla completa dentro del contenedor principal
+En la linea donde se renderiza el `HubSpotForm`, cambiar:
+- `formId={SITE_CONFIG.hubspot.forms.quieroContratar}` (que apunta a `aa3bdd32-9678-453f-9de8-c2f065983720`)
+- Por `formId="1abea590-7764-4f4e-a53b-bfba4ab708b3"` directamente, o actualizar el valor en `constants.ts`
 
-3. **Agregar ruta** (`src/App.tsx`)
-   - Importar el nuevo componente
-   - Agregar `<Route path="/clientes/llama-antes-de-excavar/" element={<LlamaAntesDeExcavar />} />`
-
-### Detalles técnicos
-- El iframe tendrá altura mínima de ~80vh para una buena experiencia
-- Se seguirá el mismo patrón que las páginas de Pago en Línea y Consultar Factura (landing interna con header/footer del sitio)
+Tambien se corregira el typo existente en "comprommiso" a "compromiso".
 
