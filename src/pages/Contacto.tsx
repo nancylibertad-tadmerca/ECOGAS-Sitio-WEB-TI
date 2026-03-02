@@ -76,7 +76,7 @@ const Contacto = () => {
           <h2 className="text-2xl font-bold mb-2">Contáctanos por WhatsApp</h2>
           <p className="mb-4 opacity-90">Respuesta rápida a tus consultas</p>
           <Button asChild size="lg" variant="secondary" className="bg-white text-[#25D366] hover:bg-white/90">
-            <a href={SITE_CONFIG.whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-secondary text-secondary-foreground border-secondary">
+            <a href={SITE_CONFIG.whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-accent text-primary-foreground border-solid border-secondary">
               Enviar mensaje
             </a>
           </Button>
