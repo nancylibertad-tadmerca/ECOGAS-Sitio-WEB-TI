@@ -1,24 +1,24 @@
 
 
-## Igualar estilo del botón 800 700 0000 al de "Quiero Contratar" en Cobertura
+## Agregar nueva imagen de Gaspar al bloque de WhatsApp
 
-### Cambio
+### Cambios
 
-En `src/pages/cobertura/Cobertura.tsx`, cambiar el estilo del botón de teléfono para que sea idéntico al botón "Quiero Contratar" (ambos con `variant="secondary"` y `size="lg"`), eliminando las clases personalizadas de outline blanco.
+1. **Copiar la imagen** `user-uploads://14.png` a `src/assets/gaspar-whatsapp.png`.
 
-### Detalle técnico
-
-En `src/pages/cobertura/Cobertura.tsx`, reemplazar:
-
-```text
-<Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
-```
-
-Por:
+2. **Modificar `src/pages/Contacto.tsx`**:
+   - Importar la nueva imagen: `import gasparWhatsapp from "@/assets/gaspar-whatsapp.png";`
+   - En el div vacío de la columna derecha (linea 87-89), agregar la imagen:
 
 ```text
-<Button asChild size="lg" variant="secondary">
+<div className="flex justify-center items-end">
+  <img
+    src={gasparWhatsapp}
+    alt="Gaspar - Servicio al Cliente ECOGAS"
+    className="h-80 w-auto object-contain drop-shadow-lg"
+  />
+</div>
 ```
 
-Solo se modifica una línea en un archivo.
+La imagen quedara alineada al centro-derecha del rectangulo azul, con un tamano grande (`h-80`) y una sombra sutil para destacar sobre el fondo.
 
