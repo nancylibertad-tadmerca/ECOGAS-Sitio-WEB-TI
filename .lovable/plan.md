@@ -15,7 +15,7 @@ className="h-80 w-auto object-contain drop-shadow-lg"
 Por:
 
 ```text
-className="h-120 w-auto object-contain drop-shadow-lg"
+className="h-100 w-auto object-contain drop-shadow-lg"
 ```
 
 Solo se modifica una linea en un archivo.
