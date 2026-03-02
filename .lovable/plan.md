@@ -1,24 +1,21 @@
+## Hacer más grande la imagen de Gaspar en el bloque de WhatsApp
 
+### Cambio
 
-## Agregar nueva imagen de Gaspar al bloque de WhatsApp
+En `src/pages/Contacto.tsx`, cambiar la clase de altura de la imagen de `h-80` a `h-96` para hacerla mas grande.
 
-### Cambios
+### Detalle técnico
 
-1. **Copiar la imagen** `user-uploads://14.png` a `src/assets/gaspar-whatsapp.png`.
-
-2. **Modificar `src/pages/Contacto.tsx`**:
-   - Importar la nueva imagen: `import gasparWhatsapp from "@/assets/gaspar-whatsapp.png";`
-   - En el div vacío de la columna derecha (linea 87-89), agregar la imagen:
+Linea 90, reemplazar:
 
 ```text
-<div className="flex justify-center items-end">
-  <img
-    src={gasparWhatsapp}
-    alt="Gaspar - Servicio al Cliente ECOGAS"
-    className="h-80 w-auto object-contain drop-shadow-lg"
-  />
-</div>
+className="h-80 w-auto object-contain drop-shadow-lg"
 ```
 
-La imagen quedara alineada al centro-derecha del rectangulo azul, con un tamano grande (`h-80`) y una sombra sutil para destacar sobre el fondo.
+Por:
 
+```text
+className="h-120 w-auto object-contain drop-shadow-lg"
+```
+
+Solo se modifica una linea en un archivo.
