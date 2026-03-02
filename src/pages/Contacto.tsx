@@ -89,7 +89,7 @@ const Contacto = () => {
               <img
                 src={gasparWhatsapp}
                 alt="Gaspar - Servicio al Cliente ECOGAS"
-                className="h-80 w-auto object-contain drop-shadow-lg"
+                className="h-120 w-auto object-contain drop-shadow-lg"
               />
             </div>
           </div>
