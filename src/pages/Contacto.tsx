@@ -37,22 +37,22 @@ const Contacto = () => {
             <CardContent className="space-y-2">
               <a
                 href={SITE_CONFIG.phoneLink}
-                className="text-2xl font-bold text-primary hover:underline block">
+                className="font-bold text-primary hover:underline block text-4xl">
 
                 {SITE_CONFIG.phone}
               </a>
-              <p className="text-sm text-muted-foreground">Línea gratuita</p>
+              <p className="text-muted-foreground text-2xl">Línea gratuita</p>
             </CardContent>
           </Card>
 
           <Card className="text-center">
-            <CardHeader>
+            <CardHeader className="bg-primary px-0 py-0">
               <Clock className="h-10 w-10 mx-auto text-primary mb-2" />
               <CardTitle>Horario de Atención</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2 text-sm">
-              <p className="text-primary bg-primary-foreground text-sm whitespace-pre-line">{SITE_CONFIG.hours.weekdays}</p>
-              <p className="text-primary">{SITE_CONFIG.hours.weekends}</p>
+              <p className="text-primary bg-primary-foreground whitespace-pre-line text-2xl">{SITE_CONFIG.hours.weekdays}</p>
+              <p className="text-primary text-2xl">{SITE_CONFIG.hours.weekends}</p>
             </CardContent>
           </Card>
 
@@ -64,7 +64,7 @@ const Contacto = () => {
             <CardContent>
               <a
                 href={`mailto:${SITE_CONFIG.email}`}
-                className="text-primary hover:underline">
+                className="text-primary hover:underline text-2xl">
 
                 {SITE_CONFIG.email}
               </a>
@@ -89,8 +89,8 @@ const Contacto = () => {
               <img
                 src={gasparWhatsapp}
                 alt="Gaspar - Servicio al Cliente ECOGAS"
-                className="h-120 w-auto object-contain drop-shadow-lg"
-              />
+                className="h-120 w-auto object-contain drop-shadow-lg" />
+              
             </div>
           </div>
         </div>
