@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import gasparImg from "@/assets/gaspar-servicio.png";
+import gasparWhatsapp from "@/assets/gaspar-whatsapp.png";
 import { Phone, Clock, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -84,8 +85,12 @@ const Contacto = () => {
                 </a>
               </Button>
             </div>
-            <div className="flex justify-center">
-              
+            <div className="flex justify-center items-end">
+              <img
+                src={gasparWhatsapp}
+                alt="Gaspar - Servicio al Cliente ECOGAS"
+                className="h-80 w-auto object-contain drop-shadow-lg"
+              />
             </div>
           </div>
         </div>
