@@ -7,6 +7,7 @@ import Layout from "@/components/layout/Layout";
 import PageBreadcrumb from "@/components/shared/PageBreadcrumb";
 import { SITE_CONFIG } from "@/lib/constants";
 import cocinaFamiliaImg from "@/assets/cocina-familia-hogar.jpg";
+import { ThreeDCardCarousel } from "@/components/ui/3d-carousel";
 
 const Hogar = () => {
   const beneficios = [
@@ -75,18 +76,8 @@ const Hogar = () => {
 
           {/* Benefits */}
           <h2 className="text-2xl font-bold mb-6">Beneficios para tu Familia</h2>
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            {beneficios.map((beneficio) => (
-              <Card key={beneficio.title}>
-                <CardHeader>
-                  <beneficio.icon className="h-8 w-8 text-primary mb-2" />
-                  <CardTitle className="text-lg">{beneficio.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{beneficio.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="mb-12">
+            <ThreeDCardCarousel cards={beneficios} />
           </div>
 
           {/* FAQs */}
