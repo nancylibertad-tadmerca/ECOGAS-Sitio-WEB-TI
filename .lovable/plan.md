@@ -1,39 +1,23 @@
 
 
-## Agregar carrusel 3D animado a los beneficios del Hogar
+## Ajustar tamano, velocidad y texto del carrusel 3D
 
-### Resumen
-Reemplazar la cuadricula estatica de 4 tarjetas de beneficios por un carrusel 3D interactivo que el usuario puede arrastrar para rotar. Las 4 tarjetas (Seguridad, Suministro Continuo, Eficiencia Energetica, Confort) giraran en un cilindro 3D.
+### Archivo a modificar
+`src/components/ui/3d-carousel.tsx`
 
-### Pasos
+### Cambios
 
-**1. Instalar dependencia**
-- Agregar `framer-motion` al proyecto.
+**1. Tamano del carrusel mas grande**
+- Aumentar `cylinderWidth` de 600/1000 a 800/1400 (movil/desktop).
+- Aumentar altura del contenedor de `h-[280px] md:h-[350px]` a `h-[320px] md:h-[400px]`.
+- Aumentar ancho de las tarjetas de `w-[200px] md:w-[260px]` a `w-[240px] md:w-[300px]`.
 
-**2. Crear componente `src/components/ui/3d-carousel.tsx`**
-- Adaptar el componente proporcionado para que en lugar de mostrar imagenes, acepte un arreglo de objetos con contenido (icono, titulo, descripcion).
-- Cada "cara" del carrusel sera una tarjeta con el beneficio correspondiente en lugar de una imagen.
-- Eliminar la funcionalidad de "click para expandir imagen" ya que no aplica para tarjetas de contenido.
-- Mantener la rotacion 3D con drag y la animacion de spring.
-- Ajustar el ancho del cilindro para 4 elementos (mas compacto que 14 imagenes).
+**2. Velocidad de arrastre mas responsiva**
+- Aumentar el multiplicador de drag de `0.05` a `0.1` (lineas 69 y 73) para que el giro responda mas rapido al movimiento del usuario.
+- Reducir `damping` del spring de 30 a 20 para que la inercia dure un poco mas al soltar.
 
-**3. Modificar `src/pages/servicios/Hogar.tsx`**
-- Importar el nuevo componente de carrusel 3D.
-- Reemplazar el `div.grid` de beneficios (lineas 78-90) por el componente de carrusel, pasando los 4 beneficios como datos.
-- Cada cara del carrusel mostrara: icono, titulo y descripcion con el mismo estilo visual actual (Card de shadcn).
-
-### Detalle tecnico
-
-El componente adaptado:
-- Usara `useMotionValue` y `useTransform` de framer-motion para la rotacion 3D con `rotate3d`.
-- Soportara drag horizontal para girar el carrusel.
-- Calculara el radio del cilindro basado en 4 caras (en vez de 14).
-- Sera responsivo: en movil el cilindro sera mas pequeno.
-- Cada cara renderizara un `Card` con icono, titulo y descripcion en lugar de un `img`.
-
-Archivos modificados:
-- `src/components/ui/3d-carousel.tsx` (nuevo)
-- `src/pages/servicios/Hogar.tsx` (editado)
-
-Dependencia nueva: `framer-motion`
+**3. Texto mas grande**
+- Icono: de `h-8 w-8` a `h-10 w-10`.
+- Titulo: de `text-lg` a `text-xl md:text-2xl`.
+- Descripcion: de `text-sm` a `text-base`.
 
