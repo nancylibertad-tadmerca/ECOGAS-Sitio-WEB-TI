@@ -1,18 +1,16 @@
 
-## Redirigir a pagina de agradecimiento al enviar formulario HubSpot
+
+## Actualizar formulario HubSpot en pagina de Contacto
 
 ### Cambio
 
-Modificar el componente `HubSpotForm` para que al enviar el formulario redirija a la URL externa de agradecimiento. Tambien se reemplazara la entrada actual del historial del navegador para que al presionar "atras" el usuario regrese al home.
+Modificar `src/pages/Contacto.tsx` para usar el nuevo Form ID `84a31ebf-3a17-4df1-8f24-c3511f4980d3` en el componente `HubSpotForm` que aparece debajo de "Envíanos un mensaje".
 
 ### Detalle tecnico
 
-1. **Agregar prop opcional `redirectUrl`** al componente `HubSpotForm`
-2. **Agregar `redirectUrl` en la config de `hbspt.forms.create`** - La API de HubSpot soporta la opcion `redirectUrl` que redirige automaticamente al enviar el formulario
-3. **Reemplazar historial del navegador** - Antes de redirigir, usar `window.history.replaceState` para que la entrada actual sea `/` (home), asi al dar "back" el usuario llega al inicio
-4. **Usar `onFormSubmitted` callback** de HubSpot para ejecutar la logica de reemplazo de historial y luego redirigir manualmente con `window.location.href`
+En `src/pages/Contacto.tsx`, cambiar la prop `formId` del componente `HubSpotForm`:
+- De: `formId={SITE_CONFIG.hubspot.forms.contacto}` (que es `aa3bdd32-9678-453f-9de8-c2f065983720`)
+- A: `formId="84a31ebf-3a17-4df1-8f24-c3511f4980d3"`
 
-### Archivos a modificar
+No se requieren cambios en otros archivos.
 
-- `src/components/shared/HubSpotForm.tsx` - Agregar prop `redirectUrl`, agregar callback `onFormSubmitted` en la configuracion del formulario que reemplace el historial y redirija
-- `src/pages/contratar/ComoContratar.tsx` - Pasar `redirectUrl="https://info.ecogas.com.mx/gracias-por-tus-datos"` al componente `HubSpotForm`
