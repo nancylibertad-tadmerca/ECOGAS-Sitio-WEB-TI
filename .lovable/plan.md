@@ -1,36 +1,17 @@
 
-## Colocar foto de abuelita con nieta como fondo del carrusel 3D
 
-### Cambio
-Copiar la imagen subida (`Receta_de_Siempre_9Jul25_01.jpg`) al proyecto y usarla como fondo estatico unicamente detras de la seccion del carrusel de beneficios. El carrusel 3D quedara superpuesto sobre la foto, con un overlay oscuro semitransparente para mantener la legibilidad de las tarjetas.
+## Alinear foto de abuelita y aplicar degradado blanco
 
-### Detalle tecnico
+### Cambios en `src/pages/servicios/Hogar.tsx`
 
-**1. Copiar imagen**
-- Guardar `user-uploads://Receta_de_Siempre_9Jul25_01.jpg` como `src/assets/abuela-nieta-cocina.jpg`.
+**1. Alinear la seccion de la abuelita con la foto de la familia**
+- Eliminar el "breakout" full-width (`-mx-[calc(50vw-50%)]`) para que la seccion de beneficios quede dentro del mismo contenedor `max-w-4xl` que la foto de la familia.
+- Aplicar `rounded-lg` y `aspect-[21/9]` al fondo de imagen para que tenga las mismas proporciones y bordes que la foto de la familia arriba.
 
-**2. Modificar `src/pages/servicios/Hogar.tsx`**
-- Importar la nueva imagen.
-- Envolver la seccion del carrusel (lineas 77-81: titulo "Beneficios para tu Familia" + `ThreeDCardCarousel`) en un contenedor con posicion relativa que se extienda fuera del contenedor principal (full-width).
-- Agregar la imagen como fondo con `bg-cover bg-center` y un overlay oscuro semitransparente (`bg-black/40`) para contraste con las tarjetas blancas.
-- El titulo "Beneficios para tu Familia" pasara a ser blanco para contrastar con el fondo oscuro.
+**2. Reemplazar overlay negro por degradado blanco semitransparente**
+- Cambiar `bg-black/50` por un degradado blanco siguiendo el patron del proyecto: `bg-gradient-to-r from-white/90 via-white/85 to-white/95`.
+- Cambiar el titulo "Beneficios para tu Familia" de `text-white` a color oscuro (`text-foreground`) para que contraste con el fondo blanco degradado.
 
-Estructura resultante de la seccion de beneficios:
+### Resultado visual
+Ambas fotos (familia cocinando y abuelita con nieta) tendran el mismo ancho, bordes redondeados y proporciones. La foto de la abuelita se vera suavemente detras del carrusel gracias al degradado blanco, sin obstruir la lectura del texto ni las tarjetas.
 
-```text
-{/* Seccion de beneficios con fondo de imagen - sale del contenedor */}
-<div className="relative -mx-[calc(...)] px-[calc(...)] py-12 mb-12">
-  {/* Imagen de fondo */}
-  <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-       style={{ backgroundImage: `url(${abuelaNietaImg})` }} />
-  {/* Overlay oscuro para legibilidad */}
-  <div className="absolute inset-0 bg-black/50" />
-  {/* Contenido */}
-  <div className="relative z-10 max-w-4xl mx-auto">
-    <h2 className="text-2xl font-bold mb-6 text-white">Beneficios para tu Familia</h2>
-    <ThreeDCardCarousel cards={beneficios} />
-  </div>
-</div>
-```
-
-Solo se modifica `src/pages/servicios/Hogar.tsx` y se agrega un asset.
