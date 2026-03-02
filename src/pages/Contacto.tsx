@@ -76,8 +76,8 @@ const Contacto = () => {
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div className="text-center lg:text-left">
               <MessageCircle className="h-12 w-12 mb-4 mx-auto lg:mx-0" />
-              <h2 className="text-2xl font-bold mb-2">Contáctanos por WhatsApp</h2>
-              <p className="mb-4 opacity-90">Respuesta rápida a tus consultas</p>
+              <h2 className="font-bold mb-2 text-4xl">Contáctanos por WhatsApp</h2>
+              <p className="mb-4 opacity-90 text-2xl">Respuesta rápida a tus consultas</p>
               <Button asChild size="lg" variant="secondary" className="bg-white text-[#25D366] hover:bg-white/90">
                 <a href={SITE_CONFIG.whatsappLink} target="_blank" rel="noopener noreferrer">
                   Enviar mensaje
