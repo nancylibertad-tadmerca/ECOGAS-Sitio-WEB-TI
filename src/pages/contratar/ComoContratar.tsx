@@ -107,16 +107,6 @@ const ComoContratar = () => {
                 </Button>
               </div>
 
-              <div className="bg-muted rounded-lg p-6">
-                <h3 className="font-semibold mb-4">Verifica tu cobertura</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Antes de solicitar el servicio, confirma que tu domicilio está 
-                  dentro de nuestra zona de operación.
-                </p>
-                <Button asChild variant="outline">
-                  <Link to="/cobertura/chihuahua/">Ver Cobertura</Link>
-                </Button>
-              </div>
             </div>
           </div>
         </div>
