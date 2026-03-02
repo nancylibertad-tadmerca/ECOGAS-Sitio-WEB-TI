@@ -127,7 +127,7 @@ const Cobertura = () => {
                 Quiero Contratar <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
+            <Button asChild size="lg" variant="secondary">
               <a href={SITE_CONFIG.phoneLink}>
                 <Phone className="mr-1 h-4 w-4" /> {SITE_CONFIG.phone}
               </a>
