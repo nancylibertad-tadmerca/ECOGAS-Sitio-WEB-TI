@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import gasparImg from "@/assets/gaspar-servicio.png";
 import { Phone, Clock, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -71,15 +72,22 @@ const Contacto = () => {
         </div>
 
         {/* WhatsApp CTA */}
-        <div className="text-white rounded-lg p-8 mb-12 text-center bg-[#78c021]">
-          <MessageCircle className="h-12 w-12 mx-auto mb-4" />
-          <h2 className="text-2xl font-bold mb-2">Contáctanos por WhatsApp</h2>
-          <p className="mb-4 opacity-90">Respuesta rápida a tus consultas</p>
-          <Button asChild size="lg" variant="secondary" className="bg-white text-[#25D366] hover:bg-white/90">
-            <a href={SITE_CONFIG.whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-accent text-primary-foreground border-solid border-secondary">
-              Enviar mensaje
-            </a>
-          </Button>
+        <div className="bg-primary text-white rounded-lg p-8 mb-12">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div className="text-center lg:text-left">
+              <MessageCircle className="h-12 w-12 mb-4 mx-auto lg:mx-0" />
+              <h2 className="text-2xl font-bold mb-2">Contáctanos por WhatsApp</h2>
+              <p className="mb-4 opacity-90">Respuesta rápida a tus consultas</p>
+              <Button asChild size="lg" variant="secondary" className="bg-white text-[#25D366] hover:bg-white/90">
+                <a href={SITE_CONFIG.whatsappLink} target="_blank" rel="noopener noreferrer">
+                  Enviar mensaje
+                </a>
+              </Button>
+            </div>
+            <div className="flex justify-center">
+              <img src={gasparImg} alt="Gaspar - Servicio al Cliente ECOGAS" className="h-64 object-contain" />
+            </div>
+          </div>
         </div>
 
         {/* Form Section */}
