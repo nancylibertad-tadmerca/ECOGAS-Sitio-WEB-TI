@@ -5,6 +5,7 @@ interface HubSpotFormProps {
   portalId: string;
   formId: string;
   region?: string;
+  redirectUrl?: string;
 }
 
 declare global {
@@ -16,13 +17,14 @@ declare global {
           formId: string;
           region?: string;
           target: string;
+          onFormSubmitted?: () => void;
         }) => void;
       };
     };
   }
 }
 
-const HubSpotForm = ({ portalId, formId, region }: HubSpotFormProps) => {
+const HubSpotForm = ({ portalId, formId, region, redirectUrl }: HubSpotFormProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(true);
   const targetId = `hubspot-form-${formId}`;
@@ -36,6 +38,10 @@ const HubSpotForm = ({ portalId, formId, region }: HubSpotFormProps) => {
           formId,
           region,
           target: `#${targetId}`,
+          onFormSubmitted: redirectUrl ? () => {
+            window.history.replaceState(null, '', '/');
+            window.location.href = redirectUrl;
+          } : undefined,
         });
         setLoading(false);
       }
