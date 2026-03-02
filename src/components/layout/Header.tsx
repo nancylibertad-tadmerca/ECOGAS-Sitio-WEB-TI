@@ -87,7 +87,7 @@ const Header = () => {
             {SITE_CONFIG.phone}
           </a>
           <Button asChild>
-            <Link to="/contacto/">Contacto</Link>
+            <a href={SITE_CONFIG.whatsappLink} target="_blank" rel="noopener noreferrer">Contacto</a>
           </Button>
         </div>
 
@@ -143,9 +143,9 @@ const Header = () => {
                   {SITE_CONFIG.phone}
                 </a>
                 <Button asChild className="w-full">
-                  <Link to="/contacto/" onClick={() => setMobileOpen(false)}>
+                  <a href={SITE_CONFIG.whatsappLink} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
                     Contacto
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </div>
