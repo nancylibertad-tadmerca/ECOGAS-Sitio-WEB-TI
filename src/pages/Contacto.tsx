@@ -72,7 +72,7 @@ const Contacto = () => {
         </div>
 
         {/* WhatsApp CTA */}
-        <div className="bg-primary text-white rounded-lg p-8 mb-12">
+        <div className="bg-primary text-white rounded-lg p-8 mb-12 py-[32px] px-[40px]">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div className="text-center lg:text-left">
               <MessageCircle className="h-12 w-12 mb-4 mx-auto lg:mx-0" />
@@ -85,7 +85,7 @@ const Contacto = () => {
               </Button>
             </div>
             <div className="flex justify-center">
-              <img src={gasparImg} alt="Gaspar - Servicio al Cliente ECOGAS" className="h-64 object-contain" />
+              <img src={gasparImg} alt="Gaspar - Servicio al Cliente ECOGAS" className="h-64 object-contain rounded-xl opacity-100" />
             </div>
           </div>
         </div>
