@@ -85,7 +85,7 @@ const Contacto = () => {
               </Button>
             </div>
             <div className="flex justify-center">
-              <img src={gasparImg} alt="Gaspar - Servicio al Cliente ECOGAS" className="h-80 w-auto object-contain" />
+              <img src={gasparImg} alt="Gaspar - Servicio al Cliente ECOGAS" className="h-80 w-auto object-fill" />
             </div>
           </div>
         </div>
