@@ -1,39 +1,24 @@
 
-## Agregar imagen de Gaspar al bloque de WhatsApp en Contacto
 
-### Cambios
+## Igualar estilo del botón 800 700 0000 al de "Quiero Contratar" en Cobertura
 
-1. **Copiar la imagen** `user-uploads://Servicio_al_Cliente2.png` a `src/assets/gaspar-servicio.png`.
+### Cambio
 
-2. **Modificar `src/pages/Contacto.tsx`** - Redisenar la franja de WhatsApp:
-   - Cambiar el fondo de verde (`bg-[#78c021]`) a azul primario (`bg-primary`).
-   - Convertir el layout de centrado a un grid de 2 columnas (`grid lg:grid-cols-2`).
-   - Columna izquierda: texto "Contáctanos por WhatsApp", subtitulo y boton "Enviar mensaje" (texto en blanco, alineado a la izquierda).
-   - Columna derecha: imagen de Gaspar importada desde `@/assets/gaspar-servicio.png`.
-   - El boton mantiene su estilo blanco con texto verde de WhatsApp.
+En `src/pages/cobertura/Cobertura.tsx`, cambiar el estilo del botón de teléfono para que sea idéntico al botón "Quiero Contratar" (ambos con `variant="secondary"` y `size="lg"`), eliminando las clases personalizadas de outline blanco.
 
-### Detalle tecnico
+### Detalle técnico
 
-En `src/pages/Contacto.tsx`:
-
-- Agregar import: `import gasparImg from "@/assets/gaspar-servicio.png";`
-- Reemplazar el bloque WhatsApp CTA (lineas 73-83) con:
+En `src/pages/cobertura/Cobertura.tsx`, reemplazar:
 
 ```text
-<div className="bg-primary text-white rounded-lg p-8 mb-12">
-  <div className="grid lg:grid-cols-2 gap-8 items-center">
-    <div className="text-center lg:text-left">
-      <MessageCircle className="h-12 w-12 mb-4 mx-auto lg:mx-0" />
-      <h2 className="text-2xl font-bold mb-2">Contáctanos por WhatsApp</h2>
-      <p className="mb-4 opacity-90">Respuesta rápida a tus consultas</p>
-      <Button ...>Enviar mensaje</Button>
-    </div>
-    <div className="flex justify-center">
-      <img src={gasparImg} alt="Gaspar - Servicio al Cliente ECOGAS"
-           className="h-64 object-contain" />
-    </div>
-  </div>
-</div>
+<Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
 ```
 
-Solo se modifica un archivo y se agrega un asset.
+Por:
+
+```text
+<Button asChild size="lg" variant="secondary">
+```
+
+Solo se modifica una línea en un archivo.
+
