@@ -1,16 +1,27 @@
 
 
-## Actualizar formulario HubSpot en pagina de Contacto
+## Eliminar apartado "Verifica tu cobertura"
 
 ### Cambio
 
-Modificar `src/pages/Contacto.tsx` para usar el nuevo Form ID `84a31ebf-3a17-4df1-8f24-c3511f4980d3` en el componente `HubSpotForm` que aparece debajo de "Envíanos un mensaje".
+Eliminar el bloque completo de "Verifica tu cobertura" en `src/pages/contratar/ComoContratar.tsx` (lineas 110-119), que incluye el titulo, texto descriptivo y boton "Ver Cobertura".
 
 ### Detalle tecnico
 
-En `src/pages/Contacto.tsx`, cambiar la prop `formId` del componente `HubSpotForm`:
-- De: `formId={SITE_CONFIG.hubspot.forms.contacto}` (que es `aa3bdd32-9678-453f-9de8-c2f065983720`)
-- A: `formId="84a31ebf-3a17-4df1-8f24-c3511f4980d3"`
+Eliminar estas lineas en `src/pages/contratar/ComoContratar.tsx`:
 
-No se requieren cambios en otros archivos.
+```text
+<div className="bg-muted rounded-lg p-6">
+  <h3 className="font-semibold mb-4">Verifica tu cobertura</h3>
+  <p className="text-sm text-muted-foreground mb-4">
+    Antes de solicitar el servicio, confirma que tu domicilio está 
+    dentro de nuestra zona de operación.
+  </p>
+  <Button asChild variant="outline">
+    <Link to="/cobertura/chihuahua/">Ver Cobertura</Link>
+  </Button>
+</div>
+```
+
+Solo se modifica un archivo. El resto de la pagina queda intacto.
 
