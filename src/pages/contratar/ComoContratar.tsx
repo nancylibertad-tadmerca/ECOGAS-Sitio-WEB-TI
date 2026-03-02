@@ -85,10 +85,10 @@ const ComoContratar = () => {
           {/* Form */}
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-2xl font-bold mb-6">Solicita una cita sin comprommiso</h2>
+              <h2 className="text-2xl font-bold mb-6">Solicita una cita sin compromiso</h2>
               <HubSpotForm 
                 portalId={SITE_CONFIG.hubspot.portalId}
-                formId={SITE_CONFIG.hubspot.forms.quieroContratar}
+                formId="1abea590-7764-4f4e-a53b-bfba4ab708b3"
                 region={SITE_CONFIG.hubspot.region}
               />
             </div>
