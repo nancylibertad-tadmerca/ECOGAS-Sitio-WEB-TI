@@ -26,12 +26,6 @@ const Index = () => {
                 Seguro, eficiente y confiable. ECOGAS lleva energía limpia a tu hogar, negocio o industria en México.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button asChild size="lg">
-                  <Link to="/cobertura/chihuahua/">
-                    Ver Cobertura
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link to="/clientes/formas-de-pago/">Soy Cliente</Link>
                 </Button>

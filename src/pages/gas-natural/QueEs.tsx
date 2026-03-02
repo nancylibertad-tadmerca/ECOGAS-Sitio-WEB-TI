@@ -112,9 +112,6 @@ const QueEs = () => {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline">
-              <Link to="/cobertura/chihuahua/">Ver Cobertura</Link>
-            </Button>
           </div>
         </div>
       </div>
