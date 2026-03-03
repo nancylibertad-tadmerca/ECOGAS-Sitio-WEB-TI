@@ -19,6 +19,7 @@ import EmpresaResponsable from "./pages/sustentabilidad/EmpresaResponsable";
 
 // Gas Natural
 import QueEsGasNatural from "./pages/gas-natural/QueEs";
+import CalidadGas from "./pages/gas-natural/CalidadGas";
 
 // Servicios
 import ServiciosHogar from "./pages/servicios/Hogar";
@@ -69,6 +70,7 @@ const App = () => (
           
           {/* Gas Natural */}
           <Route path="/gas-natural/que-es/" element={<QueEsGasNatural />} />
+          <Route path="/gas-natural/calidad/" element={<CalidadGas />} />
           
           {/* Servicios */}
           <Route path="/servicios/hogar/" element={<ServiciosHogar />} />
