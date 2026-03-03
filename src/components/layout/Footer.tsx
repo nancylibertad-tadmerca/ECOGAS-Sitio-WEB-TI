@@ -63,7 +63,10 @@ const Footer = () => {
                 <Link to="/contacto/" className="hover:opacity-80 transition-opacity">Contacto</Link>
               </li>
               <li>
-                <Link to="/empresa/certificaciones/" className="hover:opacity-80 transition-opacity">Certificaciones / Calidad del Gas     </Link>
+                <Link to="/empresa/certificaciones/" className="hover:opacity-80 transition-opacity">Certificaciones</Link>
+              </li>
+              <li>
+                <Link to="/gas-natural/calidad/" className="hover:opacity-80 transition-opacity">Calidad del Gas</Link>
               </li>
             </ul>
           </div>
