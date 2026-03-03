@@ -62,6 +62,9 @@ const Footer = () => {
               <li>
                 <Link to="/contacto/" className="hover:opacity-80 transition-opacity">Contacto</Link>
               </li>
+              <li>
+                <Link to="/empresa/certificaciones/" className="hover:opacity-80 transition-opacity">Certificaciones</Link>
+              </li>
             </ul>
           </div>
 

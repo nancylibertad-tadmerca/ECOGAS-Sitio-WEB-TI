@@ -12,6 +12,7 @@ import NotFound from "./pages/NotFound";
 // Empresa
 import QuienesSomos from "./pages/empresa/QuienesSomos";
 import FilosofiaValores from "./pages/empresa/FilosofiaValores";
+import Certificaciones from "./pages/empresa/Certificaciones";
 
 // Sustentabilidad
 import EmpresaResponsable from "./pages/sustentabilidad/EmpresaResponsable";
@@ -61,6 +62,7 @@ const App = () => (
           {/* Empresa */}
           <Route path="/empresa/quienes-somos/" element={<QuienesSomos />} />
           <Route path="/empresa/filosofia-y-valores/" element={<FilosofiaValores />} />
+          <Route path="/empresa/certificaciones/" element={<Certificaciones />} />
           
           {/* Sustentabilidad */}
           <Route path="/sustentabilidad/empresa-responsable/" element={<EmpresaResponsable />} />
