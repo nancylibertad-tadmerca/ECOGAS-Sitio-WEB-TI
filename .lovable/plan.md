@@ -1,38 +1,41 @@
 
 
-## Agregar redes sociales al Footer
+## Crear pagina de Certificaciones y agregarla al Footer
 
-### Archivo a modificar
-`src/components/layout/Footer.tsx`
+### Archivos a crear/modificar
 
-### Cambios
+**1. Crear `src/pages/empresa/Certificaciones.tsx`** (nuevo archivo)
 
-**1. Importar iconos de redes sociales**
-Lucide no tiene iconos de marca (Facebook, YouTube, etc.), asi que se crearan como componentes SVG inline simples dentro del mismo archivo o se usaran elementos `<svg>` directamente en los enlaces.
+Pagina con el contenido de certificaciones de ECOGAS, replicando la informacion obtenida del sitio oficial. Incluira:
+- Hero o titulo principal: "Certificaciones"
+- Subtitulo: "Estamos orgullosos de contar con certificaciones de calidad, medio ambiente y seguridad."
+- 4 tarjetas (cards) con cada certificacion:
+  - **ISO 9001:2008** - Sistema de gestion de calidad certificado bajo la norma ISO 9001:2008.
+  - **PROFEPA y STPS** - Primera empresa privada del Norte del pais en distribucion de Gas Natural en recibir Industria Limpia y Empresa Segura.
+  - **Empresa Familiarmente Responsable** - Distintivo por desarrollo y respeto hacia sus empleados.
+  - **Empresa Segura** - Certificacion de seguridad.
+- Cada tarjeta tendra un icono representativo (usando iconos de Lucide como Shield, Award, Heart, ShieldCheck), titulo y descripcion.
+- Estructura y estilos consistentes con las demas paginas del sitio (Layout, PageBreadcrumb, etc.).
+- Las imagenes originales de ecogas.com.mx no se incrustan directamente; se usan iconos de Lucide en su lugar.
 
-**2. Agregar seccion de redes sociales**
-En la cuarta columna del grid del footer (actualmente solo hay 3 columnas usadas de las 4 disponibles), agregar una nueva columna "Siguenos" con los 5 enlaces:
-- Facebook: https://www.facebook.com/ECOGASMexico/
-- YouTube: https://www.youtube.com/@ecogasmexico
-- X (Twitter): https://x.com/ECOGASMexico
-- Instagram: https://www.instagram.com/ecogasmexico/
-- TikTok: https://www.tiktok.com/@ecogas_mexico
+**2. Modificar `src/App.tsx`**
 
-Cada enlace tendra:
-- Icono SVG de la red social (16x16 o 20x20)
-- Nombre de la red como texto
-- `target="_blank"` y `rel="noopener noreferrer"`
-- Clases `hover:opacity-80 transition-opacity` consistentes con los demas enlaces del footer
+- Importar el nuevo componente `Certificaciones`.
+- Agregar ruta: `/empresa/certificaciones/`.
 
-**3. Estructura visual**
+**3. Modificar `src/components/layout/Footer.tsx`**
+
+- En la columna "Enlaces Rapidos", agregar un nuevo `<li>` con enlace a `/empresa/certificaciones/` con texto "Certificaciones".
+
+### Estructura visual de la pagina
+
 ```text
-Logo & Contacto | Enlaces Rapidos | Soy Cliente | Siguenos
-                                                  - Facebook
-                                                  - YouTube
-                                                  - X
-                                                  - Instagram
-                                                  - TikTok
-```
+Breadcrumb: Inicio > Certificaciones
 
-Los iconos SVG seran blancos (`fill="currentColor"`) para heredar el color del footer (`text-primary-foreground`).
+CERTIFICACIONES
+Estamos orgullosos de contar con certificaciones...
+
+[Card ISO 9001]  [Card PROFEPA]
+[Card EFR]       [Card Empresa Segura]
+```
 
