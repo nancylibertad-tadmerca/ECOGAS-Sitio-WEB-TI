@@ -1,41 +1,47 @@
 
 
-## Crear pagina de Certificaciones y agregarla al Footer
+## Crear página "Calidad del Gas" en `/gas-natural/calidad/`
+
+### Descripción
+
+Página dedicada a consultar la calidad del gas natural por ciudad, mes y año. Incluirá tres selectores (dropdowns) para filtrar la información.
 
 ### Archivos a crear/modificar
 
-**1. Crear `src/pages/empresa/Certificaciones.tsx`** (nuevo archivo)
+**1. Crear `src/pages/gas-natural/CalidadGas.tsx`**
 
-Pagina con el contenido de certificaciones de ECOGAS, replicando la informacion obtenida del sitio oficial. Incluira:
-- Hero o titulo principal: "Certificaciones"
-- Subtitulo: "Estamos orgullosos de contar con certificaciones de calidad, medio ambiente y seguridad."
-- 4 tarjetas (cards) con cada certificacion:
-  - **ISO 9001:2008** - Sistema de gestion de calidad certificado bajo la norma ISO 9001:2008.
-  - **PROFEPA y STPS** - Primera empresa privada del Norte del pais en distribucion de Gas Natural en recibir Industria Limpia y Empresa Segura.
-  - **Empresa Familiarmente Responsable** - Distintivo por desarrollo y respeto hacia sus empleados.
-  - **Empresa Segura** - Certificacion de seguridad.
-- Cada tarjeta tendra un icono representativo (usando iconos de Lucide como Shield, Award, Heart, ShieldCheck), titulo y descripcion.
-- Estructura y estilos consistentes con las demas paginas del sitio (Layout, PageBreadcrumb, etc.).
-- Las imagenes originales de ecogas.com.mx no se incrustan directamente; se usan iconos de Lucide en su lugar.
+- Layout + PageBreadcrumb (Inicio > Gas Natural > Calidad del Gas)
+- Título: "Calidad del Gas"
+- Subtítulo descriptivo sobre la transparencia en la calidad del servicio
+- Tres `Select` (de shadcn/ui) en fila responsiva:
+  - **Ciudad**: Chihuahua, Laguna, Mexicali
+  - **Mes**: Enero–Diciembre
+  - **Año**: 2020–2026
+- Debajo de los selectores, un área de resultados (placeholder por ahora) que muestre la combinación seleccionada y un mensaje tipo "Información no disponible aún" o datos de ejemplo en una tabla/card
+- Estilo consistente con las demás páginas del sitio
 
 **2. Modificar `src/App.tsx`**
 
-- Importar el nuevo componente `Certificaciones`.
-- Agregar ruta: `/empresa/certificaciones/`.
+- Importar `CalidadGas` y agregar ruta `/gas-natural/calidad/`
 
-**3. Modificar `src/components/layout/Footer.tsx`**
+**3. Modificar `src/pages/empresa/Certificaciones.tsx`**
 
-- En la columna "Enlaces Rapidos", agregar un nuevo `<li>` con enlace a `/empresa/certificaciones/` con texto "Certificaciones".
+- Agregar botón "Calidad del Gas" (`bg-[#0085AD]`) debajo de las tarjetas de "Empresa Familiarmente Responsable" y "Empresa Segura", enlazando a `/gas-natural/calidad/`
 
-### Estructura visual de la pagina
+### Estructura visual
 
 ```text
-Breadcrumb: Inicio > Certificaciones
+Breadcrumb: Inicio > Gas Natural > Calidad del Gas
 
-CERTIFICACIONES
-Estamos orgullosos de contar con certificaciones...
+CALIDAD DEL GAS
+Consulta los indicadores de calidad del gas natural...
 
-[Card ISO 9001]  [Card PROFEPA]
-[Card EFR]       [Card Empresa Segura]
+[Select Ciudad ▼]  [Select Mes ▼]  [Select Año ▼]
+
+┌─────────────────────────────────────┐
+│  Resultados para: Chihuahua,        │
+│  Enero 2025                         │
+│  (Información próximamente)         │
+└─────────────────────────────────────┘
 ```
 
