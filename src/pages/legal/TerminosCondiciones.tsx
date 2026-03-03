@@ -11,7 +11,7 @@ const meses = [
   "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
   "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre",
 ];
-const anios = Array.from({ length: 7 }, (_, i) => String(2020 + i));
+const anios = ["2026"];
 
 const mesesMap: Record<string, string> = {
   Enero: "enero", Febrero: "febrero", Marzo: "marzo", Abril: "abril",
