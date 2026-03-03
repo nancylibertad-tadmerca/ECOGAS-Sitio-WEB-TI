@@ -118,14 +118,8 @@ const CalidadGas = () => {
                     <p className="text-muted-foreground">
                       {ciudad} — {mes} {anio}
                     </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+                    <div className="pt-2">
                       <Button asChild className="gap-2">
-                        <a href={pdfPath} target="_blank" rel="noopener noreferrer">
-                          <FileText className="h-4 w-4" />
-                          Ver Informe
-                        </a>
-                      </Button>
-                      <Button asChild variant="outline" className="gap-2">
                         <a href={pdfPath} download>
                           <Download className="h-4 w-4" />
                           Descargar PDF
