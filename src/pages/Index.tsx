@@ -8,8 +8,10 @@ import { SITE_CONFIG } from "@/lib/constants";
 const portalUrl = SITE_CONFIG.portals.pagoEnLinea;
 import domingoFamiliaImg from "@/assets/domingo-familia-hero.jpg";
 import tecnicoGasImg from "@/assets/tecnico-gas-natural.jpg";
+import ChihuahuaAddressPopup from "@/components/shared/ChihuahuaAddressPopup";
 const Index = () => {
   return <Layout>
+      <ChihuahuaAddressPopup />
       {/* SEO */}
       <title>ECOGAS | Gas Natural para tu Hogar, Comercio e Industria en México</title>
       <meta name="description" content="ECOGAS distribuye gas natural seguro, eficiente y confiable en Chihuahua, Torreón, Durango y Mexicali. Contrata hoy y disfruta los beneficios del gas natural." />
