@@ -8,7 +8,7 @@ import PageBreadcrumb from "@/components/shared/PageBreadcrumb";
 import { SITE_CONFIG } from "@/lib/constants";
 import cocinaFamiliaImg from "@/assets/cocina-familia-hogar.jpg";
 import abuelaNietaImg from "@/assets/abuela-nieta-cocina.jpg";
-import { ThreeDCardCarousel } from "@/components/ui/3d-carousel";
+
 
 const Hogar = () => {
   const beneficios = [
@@ -83,7 +83,19 @@ const Hogar = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/85 to-white/95" />
           <div className="relative z-10 p-8">
             <h2 className="text-2xl font-bold mb-6 text-foreground">Beneficios para tu Familia</h2>
-            <ThreeDCardCarousel cards={beneficios} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {beneficios.map((item, index) => (
+                <Card key={index} className="bg-white/80 backdrop-blur-sm">
+                  <CardHeader>
+                    <item.icon className="h-10 w-10 text-primary mb-2" />
+                    <CardTitle className="text-xl">{item.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{item.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
 
