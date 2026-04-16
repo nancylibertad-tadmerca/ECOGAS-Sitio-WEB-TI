@@ -54,7 +54,9 @@ const Index = () => {
             <Card className="group hover:shadow-lg transition-shadow cursor-pointer">
               <Link to="/servicios/hogar/">
                 <CardHeader className="text-center">
-                  <Home className="h-10 w-10 mx-auto text-primary mb-2 group-hover:scale-110 transition-transform" />
+                  <div className="w-16 h-16 mx-auto rounded-full bg-blue-100 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                    <Home className="h-8 w-8 text-orange-500" />
+                  </div>
                   <CardTitle className="text-lg">Servicios</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -68,7 +70,9 @@ const Index = () => {
             <Card className="group hover:shadow-lg transition-shadow cursor-pointer">
               <a href={portalUrl} target="_blank" rel="noopener noreferrer">
                 <CardHeader className="text-center">
-                  <CreditCard className="h-10 w-10 mx-auto text-primary mb-2 group-hover:scale-110 transition-transform" />
+                  <div className="w-16 h-16 mx-auto rounded-full bg-blue-100 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                    <CreditCard className="h-8 w-8 text-blue-500" />
+                  </div>
                   <CardTitle className="text-lg">Pagos</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -82,7 +86,9 @@ const Index = () => {
             <Card className="group hover:shadow-lg transition-shadow cursor-pointer">
               <Link to="/contacto/">
                 <CardHeader className="text-center">
-                  <Phone className="h-10 w-10 mx-auto text-primary mb-2 group-hover:scale-110 transition-transform" />
+                  <div className="w-16 h-16 mx-auto rounded-full bg-blue-100 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                    <Phone className="h-8 w-8 text-pink-500" />
+                  </div>
                   <CardTitle className="text-lg">Contacto</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -96,7 +102,9 @@ const Index = () => {
             <Card className="group hover:shadow-lg transition-shadow cursor-pointer">
               <Link to="/cobertura/chihuahua/">
                 <CardHeader className="text-center">
-                  <MapPin className="h-10 w-10 mx-auto text-primary mb-2 group-hover:scale-110 transition-transform" />
+                  <div className="w-16 h-16 mx-auto rounded-full bg-blue-100 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                    <MapPin className="h-8 w-8 text-pink-500" />
+                  </div>
                   <CardTitle className="text-lg">Cobertura</CardTitle>
                 </CardHeader>
                 <CardContent>
