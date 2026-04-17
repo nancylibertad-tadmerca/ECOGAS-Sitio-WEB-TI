@@ -21,10 +21,10 @@ const Index = () => {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#005967]">
                 El gas natural que tu hogar merece
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-lg">
+              <p className="text-lg md:text-xl text-[#005967] max-w-lg">
                 Seguro, eficiente y confiable. ECOGAS lleva energía limpia a tu hogar, negocio o industria en México.
               </p>
               <div className="flex flex-wrap gap-4">
